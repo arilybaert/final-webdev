@@ -4,6 +4,7 @@
     <div class="row">
         <div class="col-12 o-contactForm">
             <h1>Do you want to get in touch with us?</h1>
+            <p class="a-contactInfo">Fill in this form and we will get back to you in no time!</p>
             <form>
                 <div class="form-row">
                   <div class="form-group col-md-6">

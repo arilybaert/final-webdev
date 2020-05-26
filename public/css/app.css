@@ -30,7 +30,6 @@ body {
 
 .o-nav .a-colornav {
   padding-left: 0.5vw;
-  color: #FCF4F5 !important;
 }
 
 /*
@@ -364,6 +363,19 @@ body {
 }
 
 .o-contactForm {
+  color: #FCF4F5;
+  margin-bottom: 2vw;
+}
+
+.o-contactForm .a-contactInfo {
+  color: #707070;
+}
+
+.active {
+  color: #1DB954 !important;
+}
+
+.nav-link {
   color: #FCF4F5;
 }
 

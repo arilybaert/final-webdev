@@ -128,7 +128,7 @@
                 </div>
                 <div class="col-8 m-singles">
                     <span class="a-albumTextSingle">Bad Guy</span>
-                    <span class="a-artistTextSingle">Billie Eillish</span>
+                    <span class="a-artistTextSingle">Billie Eilish</span>
 
                 </div>
             </div>

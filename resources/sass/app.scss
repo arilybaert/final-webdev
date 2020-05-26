@@ -39,7 +39,7 @@ body{
     background: linear-gradient(180deg, rgba(120,103,103,1) -100%, $color-black 100%);;
     .a-colornav {
         padding-left: 0.5vw;
-        color: $color-white !important;
+        //@HERE color: $color-white !important;
     }
     padding: 1vw;
 
@@ -387,5 +387,18 @@ body{
 
 // contact page
 .o-contactForm {
+    color: $color-white;
+    margin-bottom: 2vw;
+
+    .a-contactInfo {
+        color: $color-gray;
+    }
+}
+
+.active {
+    color: $color-green !important;
+}
+
+.nav-link {
     color: $color-white;
 }
