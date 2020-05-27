@@ -118,10 +118,17 @@
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
 
-                      <label for="amount" class="aformLlabel">Amount: <span id="demo" class="aformLlabel"></span></label>
-                      <input type="range" min="1" max="1000" value="50" class="slider" name="amount" id="myRange">
-                      
+                      <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="show" name="show">
+                        <label class="form-check-label text-white" for="show">Show on website</label>
+                      </div>
 
+
+                      <label for="amount" class="aformLlabel">Amount: <span id="demo" class="aformLlabel"></span></label>
+                      <div class="slidecontainer">
+                        <input type="range" min="1" max="1000" value="50" class="slider" name="amount" id="myRange">
+                      </div>
+                      
 
                     <button type="submit" class="btn btn-primary" id="a-Btngreen">Donate</button>
                   </form>
