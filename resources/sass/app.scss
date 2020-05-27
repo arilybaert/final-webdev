@@ -34,6 +34,11 @@ body{
 /*
                     navigation
 */
+
+.active {
+    color: $color-green !important;
+}
+
 .o-nav {
     background: rgb(120,103,103);
     background: linear-gradient(180deg, rgba(120,103,103,1) -100%, $color-black 100%);;
@@ -169,7 +174,7 @@ body{
     
     /* mouse over link */
     a:hover {
-        color: $color-white;
+        color: $color-green;
 
     }
     
@@ -183,6 +188,13 @@ body{
 /*
                     blogs
 */
+// hover card decoration
+.o-links {
+    a:hover{
+        text-decoration: none;
+    }
+}
+
 .o-blogResults {
     padding: 3vw 1vw;
     padding-bottom:3vw;
@@ -194,6 +206,9 @@ body{
 
 .o-blogPosts {
     margin-bottom: 2vw;
+    
+
+
 
     .m-blogPosts {
         display: flex;
@@ -237,6 +252,47 @@ body{
 
         }
     }
+}
+
+/*
+                    blog show
+*/
+.o-blogShow {
+    color: $color-white;
+    border: 1px solid $color-green;
+    padding: 1vw;
+    border-radius: 15px;
+    margin-bottom: 2vw;
+
+    .a-blogSynopsis {
+        color: $color-green;
+        font-size: 14pt;
+        font-style: italic;
+    }
+
+    .o-blogImgcontainer {
+
+        display: flex;
+        flex-direction: column ;
+        .a-blogShowImg {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        .a-blogTag {
+            padding: 3px 25px;
+            border: 1px solid $color-green;
+            background-color: $color-green;
+            border-radius: 3px;
+            width: min-content;
+            margin-top: 1vw;
+            margin-left: 1vw;
+            align-self: flex-end;
+        }
+
+    }
+
 }
 
 /*
@@ -395,10 +451,36 @@ body{
     }
 }
 
-.active {
-    color: $color-green !important;
-}
+
 
 .nav-link {
     color: $color-white;
+}
+
+
+// privacy 
+.o-privacy {
+    color: $color-white;
+    .a-privacyText {
+        
+    }
+    
+    .a-ulPrivacy {
+        
+    }
+}
+
+.o-privacy h1 {
+    color: $color-green;
+
+}
+
+.o-privacy h1 a {
+    color: $color-green;
+    
+}
+
+#a-Btngreen {
+    background-color: $color-green;
+    border: none;
 }

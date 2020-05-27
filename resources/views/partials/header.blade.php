@@ -17,7 +17,7 @@
 
         <a class="navbar-brand " href="{{ url('/')}}">
             <img src="{{asset('images/spotify-png.png')}}" alt="spotify logo" class="a-footerLogo">
-            <span class="a-colornav">
+            <span class="a-colornav text-white">
               Spotify Promo
             </span>
         </a>

@@ -10,4 +10,11 @@ class BlogsController extends Controller
     {
         return view('pages.blogs');
     }
+
+    public function getBlog()
+    {
+        return view('blogs.show');
+    }
+
+
 }

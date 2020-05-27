@@ -26,7 +26,7 @@
                     <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                   </div>
 
-                <button type="submit" class="btn btn-primary">Donate</button>
+                <button type="submit" class="btn btn-primary" id="a-Btngreen">Send</button>
               </form>
         </div>
     </div>

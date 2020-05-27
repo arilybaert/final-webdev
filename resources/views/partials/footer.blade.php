@@ -29,6 +29,9 @@
                     <li>
                         <a class="a-colornav" href="{{ route('contact') }}">Contact</a>
                     </li>
+                    <li>
+                        <a class="a-colornav" href="{{ route('privacy') }}">Privacy</a>
+                    </li>
                     </ul>
             </div>
             <div class="col-12 col-md-12 col-lg-4">

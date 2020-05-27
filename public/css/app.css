@@ -22,6 +22,10 @@ body {
                     navigation
 */
 
+.active {
+  color: #1DB954 !important;
+}
+
 .o-nav {
   background: #786767;
   background: linear-gradient(180deg, #786767 -100%, #211315 100%);
@@ -154,7 +158,7 @@ body {
 }
 
 .o-footer a:hover {
-  color: #FCF4F5;
+  color: #1DB954;
 }
 
 .o-footer a:active {
@@ -164,6 +168,10 @@ body {
 /*
                     blogs
 */
+
+.o-links a:hover {
+  text-decoration: none;
+}
 
 .o-blogResults {
   padding: 3vw 1vw;
@@ -218,6 +226,48 @@ body {
   font-size: 11pt;
   padding: 1vw;
   color: #707070;
+}
+
+/*
+                    blog show
+*/
+
+.o-blogShow {
+  color: #FCF4F5;
+  border: 1px solid #1DB954;
+  padding: 1vw;
+  border-radius: 15px;
+  margin-bottom: 2vw;
+}
+
+.o-blogShow .a-blogSynopsis {
+  color: #1DB954;
+  font-size: 14pt;
+  font-style: italic;
+}
+
+.o-blogShow .o-blogImgcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.o-blogShow .o-blogImgcontainer .a-blogShowImg {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.o-blogShow .o-blogImgcontainer .a-blogTag {
+  padding: 3px 25px;
+  border: 1px solid #1DB954;
+  background-color: #1DB954;
+  border-radius: 3px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin-top: 1vw;
+  margin-left: 1vw;
+  align-self: flex-end;
 }
 
 /*
@@ -371,11 +421,24 @@ body {
   color: #707070;
 }
 
-.active {
-  color: #1DB954 !important;
-}
-
 .nav-link {
   color: #FCF4F5;
+}
+
+.o-privacy {
+  color: #FCF4F5;
+}
+
+.o-privacy h1 {
+  color: #1DB954;
+}
+
+.o-privacy h1 a {
+  color: #1DB954;
+}
+
+#a-Btngreen {
+  background-color: #1DB954;
+  border: none;
 }
 
