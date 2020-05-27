@@ -25,8 +25,9 @@ class BlogSeeder extends Seeder
         $blog->intro = $faker->realText($maxNbChars = 100, $indexSize = 2);
         $blog->content = $faker->realText($maxNbChars = 900, $indexSize = 2);
         $blog->tag = $faker->word;
-        $blog->image = $faker->imageUrl($width = 640, $height = 480);
-
+        //$blog->image = $faker->imageUrl($width = 640, $height = 480);
+        $blog->image = 'https://bit.ly/3ecPjVo';
+        
         $blog->save();
 
 

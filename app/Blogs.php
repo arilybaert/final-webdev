@@ -9,7 +9,6 @@ class Blogs extends Model
 {
 
     protected $fillable = [
-            'name',
             'title',
             'intro',
             'content',

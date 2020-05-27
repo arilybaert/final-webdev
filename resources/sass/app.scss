@@ -524,3 +524,20 @@ body{
     background-color: $color-green;
     border: none;
 }
+
+
+.o-pagination .actives {
+    background-color: $color-green !important;
+    color: white;
+  }
+
+.o-pagination  {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+
+}
+  
+  .o-pagination a:hover:not(.actives) {background-color: #ddd;}

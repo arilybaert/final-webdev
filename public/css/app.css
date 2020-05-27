@@ -494,3 +494,20 @@ body {
   border: none;
 }
 
+.o-pagination .actives {
+  background-color: #1DB954 !important;
+  color: white;
+}
+
+.o-pagination {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.o-pagination a:hover:not(.actives) {
+  background-color: #ddd;
+}
+
