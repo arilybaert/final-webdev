@@ -23,7 +23,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <h1>Future Classics</h1>
+                    <h1>{{__('Future Classics')}}</h1>
                 </div>
             </div> 
             
@@ -38,7 +38,7 @@
             </div>
             <div class="row">
                 <div class="col-12">
-                    <h1>Classics</h1>
+                    <h1>{{__('Classics')}}</h1>
                 </div>
             </div> 
             
@@ -56,7 +56,7 @@
 
         
         <div class="col-12 col-md-4 col-lg-3 o-songSection">
-            <h1>Top 10 Singles</h1>
+            <h1>{{__('Top 10 Singles')}}</h1>
 
             @foreach ($topTenSongs as $topTenSong)
 

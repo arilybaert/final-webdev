@@ -21,11 +21,18 @@ class BlogSeeder extends Seeder
 
         $blog = new Blogs();
 
-        $blog->title = $faker->words($nb = 3, $asText = true);
-        $blog->intro = $faker->realText($maxNbChars = 100, $indexSize = 2);
-        $blog->content = $faker->realText($maxNbChars = 900, $indexSize = 2);
-        $blog->tag = $faker->word;
-        //$blog->image = $faker->imageUrl($width = 640, $height = 480);
+        $blog->title_nl = 'NL ' . $faker->words($nb = 2, $asText = true);
+        $blog->intro_nl = 'NL ' . $faker->realText($maxNbChars = 100, $indexSize = 2);
+        $blog->content_nl = 'NL ' . $faker->realText($maxNbChars = 900, $indexSize = 2);
+        $blog->tag_nl = 'NL';
+
+        $blog->title_en = 'ENG ' . $faker->words($nb = 2, $asText = true);
+        $blog->intro_en = 'ENG ' . $faker->realText($maxNbChars = 100, $indexSize = 2);
+        $blog->content_en = 'ENG ' . $faker->realText($maxNbChars = 900, $indexSize = 2);
+        $blog->tag_en = 'ENG';
+
+
+
         $blog->image = 'https://bit.ly/3ecPjVo';
         
         $blog->save();

@@ -1,0 +1,517 @@
+/*
+                    colors
+*/
+
+h1 {
+  margin-top: 1vw;
+  margin-bottom: 2vw;
+  font-family: "arial";
+  font-size: 21pt;
+  color: #FCF4F5;
+}
+
+.navbar-toggler {
+  background-color: #FCF4F5;
+}
+
+body {
+  background-color: #211315;
+}
+
+/*
+                    navigation
+*/
+
+.active {
+  color: #1DB954 !important;
+}
+
+.o-nav {
+  background: #786767;
+  background: linear-gradient(180deg, #786767 -100%, #211315 100%);
+  padding: 1vw;
+}
+
+.o-nav .a-colornav {
+  padding-left: 0.5vw;
+}
+
+/*
+                    homepage
+*/
+
+.o-homeCard {
+  margin-bottom: 2vw;
+  display: flex;
+  flex-direction: column;
+}
+
+.o-homeCard .a-albumHomeImage {
+  width: 100%;
+  height: auto;
+}
+
+.o-homeCard .a-albumTextHome {
+  font-weight: bold;
+  font-size: 13pt;
+  font-family: "arial";
+  color: #FCF4F5;
+}
+
+.o-homeCard .a-artistTextHome {
+  color: #707070;
+  font-size: 13pt;
+  font-family: "arial";
+}
+
+.o-songSection .o-singles {
+  padding-bottom: 1vw;
+  padding-top: 1vw;
+  border-bottom: 1px solid #FCF4F5;
+  margin-left: 0.5vw;
+}
+
+.o-songSection .o-singles .a-albumTop {
+  width: 100%;
+  height: auto;
+}
+
+.o-songSection .o-singles .m-singles {
+  display: flex;
+  flex-direction: column;
+}
+
+.o-songSection .o-singles .m-singles .a-albumTextSingle {
+  font-size: 14pt;
+  font-weight: bold;
+  display: block;
+  color: #FCF4F5;
+}
+
+.o-songSection .o-singles .m-singles .a-artistTextSingle {
+  font-size: 13pt;
+  display: block;
+  color: #707070;
+}
+
+.o-songSection .o-singles:last-child {
+  border: none;
+}
+
+/*
+                    footer
+*/
+
+.a-footerLogo {
+  width: 40px;
+}
+
+.o-footer {
+  background-color: #707070;
+  width: 100%;
+  padding: 2vw;
+  /* unvisited link */
+  /* visited link */
+  /* mouse over link */
+  /* selected link */
+}
+
+.o-footer .footerTitle {
+  font-family: "arial";
+  font-size: 14pt;
+  color: #FCF4F5;
+  font-weight: bold;
+}
+
+.o-footer .m-ul-footer {
+  list-style: none;
+  padding: 0;
+}
+
+.o-footer .a-textNewslettre {
+  font-size: 15pt;
+  font-weight: bold;
+  font-family: "arial";
+  color: #FCF4F5;
+}
+
+.o-footer .a-inputEmail {
+  border: none;
+  padding: 0.5vw;
+  float: left;
+}
+
+.o-footer .a-btnSubscribe {
+  color: #FCF4F5;
+  background-color: #1DB954;
+  border: none;
+  padding: 0.5vw;
+  float: left;
+}
+
+.o-footer a:link {
+  color: #FCF4F5;
+}
+
+.o-footer a:visited {
+  color: #FCF4F5;
+}
+
+.o-footer a:hover {
+  color: #1DB954;
+}
+
+.o-footer a:active {
+  color: #FCF4F5;
+}
+
+/*
+                    blogs
+*/
+
+.o-links a:hover {
+  text-decoration: none;
+}
+
+.o-blogResults {
+  padding: 3vw 1vw;
+  padding-bottom: 3vw;
+}
+
+.o-blogResults .a-resultsText {
+  color: #FCF4F5;
+}
+
+.o-blogPosts {
+  margin-bottom: 2vw;
+}
+
+.o-blogPosts .m-blogPosts {
+  display: flex;
+  flex-direction: column;
+  color: #FCF4F5;
+  border-radius: 15px;
+  border: 1px solid #1DB954;
+  padding: 0.8vw;
+  box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.77);
+}
+
+.o-blogPosts .m-blogPosts .a-blogArt {
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+}
+
+.o-blogPosts .m-blogPosts .a-blogTag {
+  padding: 3px 25px;
+  border: 1px solid #1DB954;
+  background-color: #1DB954;
+  border-radius: 3px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin-top: 1vw;
+  margin-left: 1vw;
+  align-self: flex-end;
+  margin-right: 1vw;
+}
+
+.o-blogPosts .m-blogPosts .a-title {
+  font-size: 18pt;
+  font-weight: bold;
+  padding-left: 1vw;
+}
+
+.o-blogPosts .m-blogPosts .a-synopsis {
+  font-size: 11pt;
+  padding: 1vw;
+  color: #707070;
+}
+
+/*
+                    blog show
+*/
+
+.o-blogShow {
+  color: #FCF4F5;
+  border: 1px solid #1DB954;
+  padding: 1vw;
+  border-radius: 15px;
+  margin-bottom: 2vw;
+}
+
+.o-blogShow .a-blogSynopsis {
+  color: #1DB954;
+  font-size: 14pt;
+  font-style: italic;
+}
+
+.o-blogShow .o-blogImgcontainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.o-blogShow .o-blogImgcontainer .a-blogShowImg {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+}
+
+.o-blogShow .o-blogImgcontainer .a-blogTag {
+  padding: 3px 25px;
+  border: 1px solid #1DB954;
+  background-color: #1DB954;
+  border-radius: 3px;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
+  margin-top: 1vw;
+  margin-left: 1vw;
+  align-self: flex-end;
+}
+
+/*
+                    donations
+*/
+
+.o-dontations-page {
+  margin-bottom: 1vw;
+}
+
+.o-dontations-page .a-donationsMsg__big {
+  color: #FCF4F5;
+  font-size: 24pt;
+  font-weight: bold;
+}
+
+.o-dontations-page .a-donationsMsg__small {
+  color: #FCF4F5;
+  font-size: 13pt;
+}
+
+.o-dontations-page .a-recentDonations {
+  color: #FCF4F5;
+  font-weight: bold;
+  font-size: 16pt;
+}
+
+.o-dontations-page .m-donations {
+  border-bottom: 1px solid #707070;
+  padding: 1vw;
+}
+
+.o-dontations-page .m-donations .a-donationAmount {
+  color: #1DB954;
+  font-size: 25pt;
+  font-weight: bold;
+}
+
+.o-dontations-page .m-donations .m-donationUserMsg {
+  padding: 3px;
+  display: flex;
+  flex-direction: column;
+}
+
+.o-dontations-page .m-donations .m-donationUserMsg .a-donationUserMsg {
+  font-size: 13pt;
+  color: #FCF4F5;
+  align-self: flex-end;
+}
+
+.o-dontations-page .m-donations .m-donationUserMsg .a-donationUser {
+  align-self: flex-end;
+  color: #707070;
+}
+
+.o-dontations-page .m-donations:last-child {
+  border: none;
+}
+
+.o-donationsForm {
+  padding-left: 3vw;
+  /* The slider itself */
+  /* Mouse-over effects */
+  /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+}
+
+.o-donationsForm .a-formLabel {
+  display: block;
+}
+
+.o-donationsForm .slidecontainer {
+  width: 100%;
+  /* Width of the outside container */
+  margin-bottom: 1vw;
+}
+
+.o-donationsForm .slider {
+  -webkit-appearance: none;
+  /* Override default CSS styles */
+  -moz-appearance: none;
+       appearance: none;
+  width: 100%;
+  /* Full-width */
+  height: 25px;
+  /* Specified height */
+  background: #d3d3d3;
+  /* Grey background */
+  outline: none;
+  /* Remove outline */
+  opacity: 0.7;
+  /* Set transparency (for mouse-over effects on hover) */
+  /* 0.2 seconds transition on hover */
+  transition: opacity 0.2s;
+  border-radius: 14px;
+}
+
+.o-donationsForm .slider:hover {
+  opacity: 1;
+  /* Fully shown on mouse-over */
+}
+
+.o-donationsForm .slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  /* Override default look */
+  appearance: none;
+  width: 25px;
+  /* Set a specific slider handle width */
+  height: 25px;
+  /* Slider handle height */
+  background: #4CAF50;
+  /* Green background */
+  cursor: pointer;
+  /* Cursor on hover */
+}
+
+.o-donationsForm .slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #4CAF50;
+  cursor: pointer;
+}
+
+.o-donationsForm .aformLlabel {
+  color: #FCF4F5;
+  margin-top: 1vw;
+}
+
+/*
+                    about page
+*/
+
+.a-missionStatement {
+  color: #FCF4F5;
+}
+
+.o-hq {
+  padding: 0;
+}
+
+.o-hq .m-hqCard {
+  box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.77);
+  border-radius: 0 0 15px 15px;
+}
+
+.o-hq .m-hqCard .a-hqImg {
+  display: flex;
+  width: 100%;
+  height: auto;
+  border-radius: 15px 15px 0 0;
+}
+
+.o-hq .m-hqCard .m-hq-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  padding: 1vw;
+}
+
+.o-hq .m-hqCard .m-hq-info .a-hqText {
+  color: #FCF4F5;
+  font-size: 14pt;
+}
+
+.m-platformCard {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FCF4F5;
+  font-weight: bold;
+  font-size: 15pt;
+  margin-bottom: 2vw;
+}
+
+.m-platformCard .m-cardContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #1DB954;
+  border-radius: 9px;
+  width: 70%;
+  height: auto;
+  padding: 6vw;
+  box-shadow: 0px 2px 8px 2px rgba(0, 0, 0, 0.77);
+}
+
+.m-platformCard .a-platform-icon {
+  height: 60px;
+  width: 60px;
+  margin-bottom: 1vw;
+}
+
+.a-platformTitle {
+  text-align: center;
+}
+
+.o-contactForm {
+  color: #FCF4F5;
+  margin-bottom: 2vw;
+}
+
+.o-contactForm .a-contactInfo {
+  color: #707070;
+}
+
+.nav-link {
+  color: #FCF4F5;
+}
+
+.o-privacy {
+  color: #FCF4F5;
+}
+
+.o-privacy h1 {
+  color: #1DB954;
+}
+
+.o-privacy h1 a {
+  color: #1DB954;
+}
+
+#a-Btngreen {
+  background-color: #1DB954;
+  border: none;
+}
+
+.o-pagination .actives {
+  background-color: #1DB954 !important;
+  color: white;
+}
+
+.o-pagination {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+  justify-content: center;
+  align-items: center;
+}
+
+.o-pagination a:hover:not(.actives) {
+  background-color: #ddd;
+}
+
+.o-admin-blogs {
+  list-style: none;
+}
+

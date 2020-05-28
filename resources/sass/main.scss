@@ -1,0 +1,549 @@
+// @TODO style subscribe at small column cofiguration
+/*
+                    colors
+*/
+$color-gray: #707070;
+$color-green: #1DB954;
+$color-blue: #4C94EA;
+$color-orange: #EEA850;
+$color-pink: #D45E70;
+$color-black: #211315;
+$color-white: #FCF4F5;
+$color-light-gray: #ecdbdb;
+
+$font-main: 'arial';
+
+h1 {
+    margin-top: 1vw;
+    margin-bottom: 2vw;
+    font-family: $font-main;
+    font-size: 21pt;
+    color: $color-white;
+
+}
+.navbar-toggler {
+    background-color: $color-white;
+}
+
+
+body{
+    background-color: $color-black;
+    //background-color: $color-light-gray;
+}
+
+/*
+                    navigation
+*/
+
+.active {
+    color: $color-green !important;
+}
+
+.o-nav {
+    background: rgb(120,103,103);
+    background: linear-gradient(180deg, rgba(120,103,103,1) -100%, $color-black 100%);;
+    .a-colornav {
+        padding-left: 0.5vw;
+        //@HERE color: $color-white !important;
+    }
+    padding: 1vw;
+
+}
+
+
+/*
+                    homepage
+*/
+.o-homeCard {
+    margin-bottom: 2vw;
+    display: flex;
+    flex-direction: column;
+    .a-albumHomeImage {
+        width: 100%;
+        height: auto;
+    }
+
+    .a-albumTextHome {
+        font-weight: bold;
+        font-size: 13pt;
+        font-family: $font-main;
+        color: $color-white;
+
+    }
+
+    .a-artistTextHome {
+        color: $color-gray;
+        font-size: 13pt;
+        font-family: $font-main;
+    }
+}
+.o-songSection {
+
+    .o-singles {
+        padding-bottom: 1vw;
+        padding-top: 1vw;
+        border-bottom: 1px solid $color-white;
+        margin-left: 0.5vw;
+        .a-albumTop {
+        width: 100%;
+        height: auto;
+        }
+        .m-singles {
+            display: flex;
+            flex-direction: column;
+
+            .a-albumTextSingle {
+                font-size: 14pt;
+                font-weight: bold;
+                display: block;
+                color: $color-white;
+            }
+            .a-artistTextSingle {
+                font-size: 13pt;
+                display: block;
+                color: $color-gray;
+            }
+        }
+    }
+    .o-singles:last-child {
+        border: none;
+    }
+}
+
+/*
+                    footer
+*/
+
+.a-footerLogo{
+    width: 40px;
+
+}
+
+
+
+.o-footer {
+
+    background-color: $color-gray;
+    width: 100%;
+    padding: 2vw;
+
+
+
+    .footerTitle {
+        font-family: $font-main;
+        font-size: 14pt;
+        color: $color-white;
+        font-weight: bold;
+    }
+    .m-ul-footer {
+        list-style: none;
+        padding: 0;
+    }
+
+    .a-textNewslettre {
+        font-size: 15pt;
+        font-weight: bold;
+        font-family: $font-main;
+        color: $color-white;
+    }
+
+    .a-inputEmail {
+        border: none;
+        padding: 0.5vw;
+        float: left;
+    }
+
+    .a-btnSubscribe {
+        color: $color-white;
+        background-color: $color-green;
+        border: none;
+        padding: 0.5vw;
+        float: left;
+
+    }
+
+    /* unvisited link */
+    a:link {
+        color: $color-white;
+    }
+    
+    /* visited link */
+    a:visited {
+        color: $color-white;
+    }
+    
+    /* mouse over link */
+    a:hover {
+        color: $color-green;
+
+    }
+    
+    /* selected link */
+    a:active {
+        color: $color-white;
+
+    }
+}
+
+/*
+                    blogs
+*/
+// hover card decoration
+.o-links {
+    a:hover{
+        text-decoration: none;
+    }
+}
+
+.o-blogResults {
+    padding: 3vw 1vw;
+    padding-bottom:3vw;
+
+    .a-resultsText {
+        color: $color-white;
+    }
+}
+
+.o-blogPosts {
+    margin-bottom: 2vw;
+    
+
+
+
+    .m-blogPosts {
+        display: flex;
+        flex-direction: column;
+        color: $color-white;
+        border-radius: 15px;
+        border: 1px solid $color-green;
+        padding: 0.8vw;
+        box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.77);
+
+
+        .a-blogArt {
+            width: 100%;
+            height: auto;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .a-blogTag {
+            padding: 3px 25px;
+            border: 1px solid $color-green;
+            background-color: $color-green;
+            border-radius: 3px;
+            width: min-content;
+            margin-top: 1vw;
+            margin-left: 1vw;
+            align-self: flex-end;
+            margin-right: 1vw;
+        }
+
+        .a-title {
+            font-size: 18pt;
+            font-weight: bold;
+            padding-left: 1vw;
+
+        }
+
+        .a-synopsis {
+            font-size: 11pt;
+            padding: 1vw;
+            color: $color-gray;
+
+        }
+    }
+}
+
+/*
+                    blog show
+*/
+.o-blogShow {
+    color: $color-white;
+    border: 1px solid $color-green;
+    padding: 1vw;
+    border-radius: 15px;
+    margin-bottom: 2vw;
+
+    .a-blogSynopsis {
+        color: $color-green;
+        font-size: 14pt;
+        font-style: italic;
+    }
+
+    .o-blogImgcontainer {
+
+        display: flex;
+        flex-direction: column ;
+        .a-blogShowImg {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+        }
+
+        .a-blogTag {
+            padding: 3px 25px;
+            border: 1px solid $color-green;
+            background-color: $color-green;
+            border-radius: 3px;
+            width: min-content;
+            margin-top: 1vw;
+            margin-left: 1vw;
+            align-self: flex-end;
+        }
+
+    }
+
+}
+
+/*
+                    donations
+*/
+
+.o-dontations-page {
+    margin-bottom: 1vw;
+    .a-donationsMsg__big {
+        color: $color-white;
+        font-size: 24pt;
+        font-weight: bold;
+    }
+
+    .a-donationsMsg__small {
+        color: $color-white;
+        font-size: 13pt;
+    }
+
+    .a-recentDonations {
+        color: $color-white;
+        font-weight: bold;
+        font-size: 16pt;
+
+    }
+
+    .m-donations {
+        border-bottom: 1px solid $color-gray;
+
+        padding: 1vw;
+        .a-donationAmount {
+        color: $color-green;
+
+            font-size: 25pt;
+            font-weight: bold;
+        }
+
+        .m-donationUserMsg {
+
+            padding: 3px;
+
+            display: flex;
+            flex-direction: column;
+            
+            .a-donationUserMsg {
+                font-size: 13pt;
+                color: $color-white;
+                align-self: flex-end;
+            }
+
+            .a-donationUser {
+                align-self: flex-end;
+                color: $color-gray;
+            }
+        }
+    }
+    .m-donations:last-child {
+        border: none;
+    }
+}
+
+.o-donationsForm {
+    padding-left: 3vw;
+
+    .a-formLabel {
+        display: block;
+    }
+
+    .slidecontainer {
+        width: 100%; /* Width of the outside container */
+        margin-bottom: 1vw;
+
+      }
+      
+      /* The slider itself */
+      .slider {
+        -webkit-appearance: none;  /* Override default CSS styles */
+        appearance: none;
+        width: 100%; /* Full-width */
+        height: 25px; /* Specified height */
+        background: #d3d3d3; /* Grey background */
+        outline: none; /* Remove outline */
+        opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+        -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+        transition: opacity .2s;
+        border-radius: 14px;
+      }
+      
+      /* Mouse-over effects */
+      .slider:hover {
+        opacity: 1; /* Fully shown on mouse-over */
+      }
+      
+      /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
+      .slider::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        width: 25px; /* Set a specific slider handle width */
+        height: 25px; /* Slider handle height */
+        background: #4CAF50; /* Green background */
+        cursor: pointer; /* Cursor on hover */
+      }
+      
+      .slider::-moz-range-thumb {
+        width: 25px; 
+        height: 25px; 
+        background: #4CAF50; 
+        cursor: pointer; 
+      }
+
+    .aformLlabel {
+        color: $color-white;
+        margin-top: 1vw;
+
+    }
+}
+
+/*
+                    about page
+*/
+.a-missionStatement {
+    color: $color-white;
+}
+.o-hq {
+    padding: 0;
+    .m-hqCard {
+        box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.77);
+        border-radius: 0 0 15px 15px;
+
+
+        .a-hqImg {
+            display: flex;
+            width: 100%;
+            height: auto;
+            border-radius: 15px 15px 0 0;
+        }
+
+        .m-hq-info {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            padding: 1vw;
+
+            .a-hqText {
+                color: $color-white;
+                font-size: 14pt;
+            }
+
+        }
+    }
+}
+
+.m-platformCard {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: $color-white;
+    font-weight: bold;
+    font-size: 15pt;
+    margin-bottom: 2vw;
+
+
+    .m-cardContent {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $color-green;
+        border-radius: 9px;
+        width: 70%;
+        height: auto;
+        padding: 6vw;
+        box-shadow: 0px 2px 8px 2px rgba(0,0,0,0.77);
+
+    }
+
+    .a-platform-icon {
+        height: 60px;
+        width: 60px;
+        margin-bottom: 1vw;
+    }
+}
+
+.a-platformTitle {
+    text-align: center;
+}
+
+
+// contact page
+.o-contactForm {
+    color: $color-white;
+    margin-bottom: 2vw;
+
+    .a-contactInfo {
+        color: $color-gray;
+    }
+}
+
+
+
+.nav-link {
+    color: $color-white;
+}
+
+
+// privacy 
+.o-privacy {
+    color: $color-white;
+    .a-privacyText {
+        
+    }
+    
+    .a-ulPrivacy {
+        
+    }
+}
+
+.o-privacy h1 {
+    color: $color-green;
+
+}
+
+.o-privacy h1 a {
+    color: $color-green;
+    
+}
+
+#a-Btngreen {
+    background-color: $color-green;
+    border: none;
+}
+
+
+.o-pagination .actives {
+    background-color: $color-green !important;
+    color: white;
+  }
+
+.o-pagination  {
+    display: flex;
+    flex-direction: row;
+    list-style: none;
+    justify-content: center;
+    align-items: center;
+
+}
+  
+  .o-pagination a:hover:not(.actives) {background-color: #ddd;}
+
+
+  // admin
+  .o-admin-blogs {
+      list-style: none;
+  }

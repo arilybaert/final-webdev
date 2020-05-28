@@ -17,13 +17,16 @@ class BlogsController extends Controller
         ]);
     }
 
-    public function getBlog(Blogs $blog)
+    public function getBlog($prefix, Blogs $blog)
     {
-
+        //dd($prefix);
         return view('blogs.show', [
             'blog' => $blog,
         ]);
     }
+
+
+
 
 
 }

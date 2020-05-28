@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        for($i = 0; $i<9; $i++) {
+        for($i = 0; $i<19; $i++) {
             $this->call(BlogSeeder::class);
         }
     }
