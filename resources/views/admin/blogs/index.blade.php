@@ -23,7 +23,8 @@
                         <td>{{ $blog->tag_en }}</td>
                         <td>
                             <a href="{{ route('admin.blogs.edit', $blog->id)}}" type="button" class="btn btn-primary">Edit</a>
-                            <button type="button" class="btn btn-danger">Delete</button>
+                            <a href="{{route('admin.blogs.delete', $blog->id)}}" type="button" class="btn btn-danger">Delete</a>
+                            
                         </td>
                     </tr>
                   @endforeach
@@ -32,6 +33,27 @@
               </table>
         </div>
     
+<!-- Modal -->
+{{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          ...
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div> --}}
+
     </div>
     <div class="row">
         <div class="col-12 o-admin-blogs">

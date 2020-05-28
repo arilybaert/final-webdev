@@ -515,3 +515,8 @@ body {
   list-style: none;
 }
 
+.invalid {
+  border: 3px solid red !important;
+  border-color: red;
+}
+

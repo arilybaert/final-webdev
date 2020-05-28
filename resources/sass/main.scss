@@ -547,3 +547,8 @@ body{
   .o-admin-blogs {
       list-style: none;
   }
+
+  .invalid {
+    border: 3px solid red !important;
+    border-color: red;
+  }

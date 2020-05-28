@@ -38,7 +38,11 @@ Route::get('/admin', 'AdminController@getIndex')->name('admin');
 
 Route::get('/admin/blogs', 'AdminController@getBlogs')->name('admin.blogs');
 Route::get('/admin/blogs/{blog}', 'AdminController@editBlogs')->name('admin.blogs.edit');
+
 Route::post('/admin/blogs/save', 'AdminController@postSave')->name('admin.blogs.save');
+
+Route::get('/admin/blogs/delete/{id}', 'AdminController@postDelete')->name('admin.blogs.delete');
+
 
 Route::get('/admin/donations', 'AdminController@getIndex')->name('admin.donations');
 

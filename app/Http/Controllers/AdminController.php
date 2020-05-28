@@ -32,7 +32,7 @@ class AdminController extends Controller
     }
 
     public function postSave(Request $r) {
-        //dd($r);
+        //dd($r->id);
 
         $validationRules = [
             'title_nl' => 'required|max:10',
@@ -70,9 +70,10 @@ class AdminController extends Controller
 
             'image' => $r->image,
         ];
-
+        //dd($data);
         if($r->id) {
             $blog = Blogs::where('id', $r->id)->first();
+            //dd($blog);
             $blog->update($data);
         } else {
             $blog = Blogs::create($data);
@@ -80,5 +81,19 @@ class AdminController extends Controller
 
 
         return redirect()->route('admin.blogs');
+    }
+
+    public function postdelete(Request $r) {
+        
+        Blogs::find($r->id)->delete();
+        
+        // foreach ($reservations as $reservation) {
+        //     Reservations::find($reservation->id)->delete();
+        // };
+
+        // Client::find($request->clientId)->delete();
+        return redirect()->route('admin.blogs');
+
+
     }
 }
