@@ -97,25 +97,26 @@
         <div class="row">
             <div class="col-12">
                 <h1>{{__('Want to support our cause?')}}</h1>
-                <form>
+                <form action="{{route('donations.payment', app()->getLocale())}}" method="POST">
+                    @csrf
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="firstname" class="aformLlabel">{{__('Firstname')}}:</label>
-                        <input type="text" class="form-control" id="inputEmail4" placeholder="John">
+                        <input type="text" class="form-control" id="inputEmail4" placeholder="John" name="firstname">
                       </div>
                       <div class="form-group col-md-6">
                         <label for="lastname" class="aformLlabel">{{__('Lastname')}}:</label>
-                        <input type="text" class="form-control" placeholder="Doe">
+                        <input type="text" class="form-control" placeholder="Doe" name="lastname">
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="email" class="aformLlabel">{{__('Email')}}:</label>
-                      <input type="email" class="form-control" placeholder="john.doe@email.com">
+                      <input type="email" class="form-control" placeholder="john.doe@email.com" name="email">
                     </div>
 
                     <div class="form-group">
                         <label for="exampleFormControlTextarea1" class="aformLlabel">{{__('Message')}}:</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="msg"></textarea>
                       </div>
 
                       <div class="form-check">
@@ -126,7 +127,7 @@
 
                       <label for="amount" class="aformLlabel">{{__('Amount')}}: <span id="demo" class="aformLlabel"></span></label>
                       <div class="slidecontainer">
-                        <input type="range" min="1" max="1000" value="50" class="slider" name="amount" id="myRange">
+                        <input type="range" min="1" max="1000" value="50" class="slider" name="amount" id="myRange" name="amount">
                       </div>
                       
 

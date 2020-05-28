@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+
+Route::name('webhooks.mollie')->post('webhooks/mollie', 'WebhookController@handle');
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}',
@@ -14,6 +16,10 @@ Route::group(['prefix' => '{language}',
             Route::get('/blogs/{blog?}', 'BlogsController@getBlog')->name('blog.show');
             
             Route::get('/donations', 'DonationController@getIndex')->name('donations');
+            Route::post('/donations/payment', 'DonationController@donationPayment')->name('donations.payment');
+            
+            Route::get('/donations/succes', 'DonationController@getSucces')->name('donations.succes');
+
             
             Route::get('/about', 'AboutController@getIndex')->name('about');
             
@@ -37,7 +43,8 @@ Auth::routes();
 Route::get('/admin', 'AdminController@getIndex')->name('admin');
 
 Route::get('/admin/blogs', 'AdminController@getBlogs')->name('admin.blogs');
-Route::get('/admin/blogs/{blog}', 'AdminController@editBlogs')->name('admin.blogs.edit');
+// Route::get('/admin/blogs/create', 'AdminController@createBlogs')->name('admin.blogs.create');
+Route::get('/admin/blogs/create/{blog?}', 'AdminController@editBlogs')->name('admin.blogs.edit');
 
 Route::post('/admin/blogs/save', 'AdminController@postSave')->name('admin.blogs.save');
 

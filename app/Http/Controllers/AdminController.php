@@ -31,6 +31,10 @@ class AdminController extends Controller
         ]);
     }
 
+    public function createBlogs() {
+        return view('admin.blogs.create');
+    }
+
     public function postSave(Request $r) {
         //dd($r->id);
 
