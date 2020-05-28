@@ -494,7 +494,7 @@ body {
   border: none;
 }
 
-.o-pagination .actives {
+.o-pagination .active {
   background-color: #1DB954 !important;
   color: white;
 }

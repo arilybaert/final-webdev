@@ -30,16 +30,16 @@
                   <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
                 </li> -->
                 <li class="nav-item">
-                  <a class="nav-link a-colornav text-white {{ (request()->is('blogs')) ? 'active' : '' }}" href="{{ route('blogs') }}">Blogs</a>
+                  <a class="nav-link a-colornav text-white {{ (request()->is('blogs')) ? 'active' : '' }}" href="{{ route('blogs', app()->getLocale()) }}">Blogs</a>
                 </li>
                 <li class="nav-item">
-                  <a class="nav-link a-colornav text-white {{ (request()->is('donations')) ? 'active' : '' }}" href="{{ route('donations') }}">Donation</a>
+                  <a class="nav-link a-colornav text-white {{ (request()->is('donations')) ? 'active' : '' }}" href="{{ route('donations', app()->getLocale()) }}">Donation</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-white a-colornav {{ (request()->is('about')) ? 'active' : '' }}" href="{{ route('about') }}">About</a>
+                    <a class="nav-link text-white a-colornav {{ (request()->is('about')) ? 'active' : '' }}" href="{{ route('about', app()->getLocale()) }}">About</a>
                 </li>
                 <li class="nav-item ">
-                    <a class="nav-link text-white a-colornav {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ route('contact') }}">Contact</a>
+                    <a class="nav-link text-white a-colornav {{ (request()->is('contact')) ? 'active' : '' }}" href="{{ route('contact', app()->getLocale()) }}">Contact</a>
                 </li>
               </ul>
             </div>

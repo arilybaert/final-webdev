@@ -7,16 +7,17 @@
         <div class="row">
             <div class="col-12 col-md-4 col-lg-4">
                 <img src="{{asset('images/spotify-png.png')}}" alt="spotify logo" class="a-footerLogo">
-                <a class="navbar-brand a-colornav" href="{{ url('/')}}">Spotify Promo</a>
+                <a class="navbar-brand a-colornav" href="{{ url('/', app()->getLocale())}}">Spotify Promo</a>
             </div>
+           
             <div class="col-12 col-md-4 col-lg-2">
                 <span class="footerTitle">Media</span>
                 <ul class="m-ul-footer">
                     <li>
-                        <a class="a-colornav" href="{{ route('blogs') }}">Blogs</a>
+                        <a class="a-colornav" href="{{ route('blogs', app()->getLocale()) }}">Blogs</a>
                     </li>
                     <li>
-                        <a class="a-colornav" href="{{ route('donations') }}">Donation</a>
+                        <a class="a-colornav" href="{{ route('donations', app()->getLocale()) }}">Donation</a>
                     </li>
                     </ul>
             </div>
@@ -24,13 +25,13 @@
                 <span class="footerTitle">Info</span>
                 <ul class="m-ul-footer">
                     <li>
-                        <a class=" a-colornav" href="{{ route('about') }}">About</a>
+                        <a class=" a-colornav" href="{{ route('about', app()->getLocale()) }}">About</a>
                     </li>
                     <li>
-                        <a class="a-colornav" href="{{ route('contact') }}">Contact</a>
+                        <a class="a-colornav" href="{{ route('contact', app()->getLocale()) }}">Contact</a>
                     </li>
                     <li>
-                        <a class="a-colornav" href="{{ route('privacy') }}">Privacy</a>
+                        <a class="a-colornav" href="{{ route('privacy', app()->getLocale()) }}">Privacy</a>
                     </li>
                     </ul>
             </div>

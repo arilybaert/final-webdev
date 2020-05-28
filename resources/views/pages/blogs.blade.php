@@ -11,7 +11,7 @@
 <div class="row o-links">
 
     @foreach ($blogs as $blog )
-        <a href="{{ route('blog.show', $blog->id ) }}" class="col-12 col-md-4 col-lg-3 o-blogPosts">
+        <a href="{{ route('blog.show', [app()->getLocale(), $blog->id ]) }}" class="col-12 col-md-4 col-lg-3 o-blogPosts">
             <article class="m-blogPosts">
                 <img src="{{ $blog->image }}" alt="blog images" class="a-blogArt">
                 <span class="a-blogTag">{{ $blog->tag }}</span>

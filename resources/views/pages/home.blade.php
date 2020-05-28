@@ -6,7 +6,7 @@
         <div class="col-12 col-md-8 col-lg-9">
             <div class="row">
                 <div class="col-12">
-                    <h1>Latest Release</h1>
+                    <h1>{{__('Latest Release')}}</h1>
                 </div>
             </div> 
             
