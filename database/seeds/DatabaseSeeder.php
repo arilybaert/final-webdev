@@ -12,7 +12,7 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         for($i = 0; $i<19; $i++) {
-            $this->call(BlogSeeder::class);
+            $this->call(PaymentsSeeder::class);
         }
     }
 }

@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-Route::name('webhooks.mollie')->post('webhooks/mollie', 'WebhookController@handle');
+Route::name('webhooks.mollie')->any('webhooks/mollie', 'WebhookController@handle');
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}',
@@ -14,17 +14,17 @@ Route::group(['prefix' => '{language}',
 
             Route::get('/blogs', 'BlogsController@getIndex')->name('blogs');
             Route::get('/blogs/{blog?}', 'BlogsController@getBlog')->name('blog.show');
-            
-            Route::get('/donations', 'DonationController@getIndex')->name('donations');
+
+            Route::any('/donations', 'DonationController@getIndex')->name('donations');
             Route::post('/donations/payment', 'DonationController@donationPayment')->name('donations.payment');
-            
+
             Route::get('/donations/succes', 'DonationController@getSucces')->name('donations.succes');
 
-            
+
             Route::get('/about', 'AboutController@getIndex')->name('about');
-            
+
             Route::get('/contact', 'ContactController@getIndex')->name('contact');
-            
+
             Route::get('/privacy', 'PrivacyController@getIndex')->name('privacy');
 
             Route::get('/newsletter','NewsletterController@create')->name('newsletter');
