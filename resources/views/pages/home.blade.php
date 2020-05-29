@@ -8,8 +8,8 @@
                 <div class="col-12">
                     <h1>{{__('Latest Release')}}</h1>
                 </div>
-            </div> 
-            
+            </div>
+
             <div class="row">
                 @foreach ( $newReleases as $newRelease )
                     <div class="col-12 col-md-6 col-lg-3 o-homeCard">
@@ -18,15 +18,15 @@
                         <span class="a-artistTextHome">{{ $newRelease->artist }}</span>
                     </div>
                 @endforeach
-                
+
 
             </div>
             <div class="row">
                 <div class="col-12">
                     <h1>{{__('Future Classics')}}</h1>
                 </div>
-            </div> 
-            
+            </div>
+
             <div class="row">
                 @foreach ( $futureClassics as $futureClassic )
                     <div class="col-12 col-md-6 col-lg-3 o-homeCard">
@@ -40,8 +40,8 @@
                 <div class="col-12">
                     <h1>{{__('Classics')}}</h1>
                 </div>
-            </div> 
-            
+            </div>
+
             <div class="row">
                 @foreach ( $classics as $classic )
                     <div class="col-12 col-md-6 col-lg-3 o-homeCard">
@@ -51,10 +51,10 @@
                     </div>
                 @endforeach
             </div>
-            
+
         </div>
 
-        
+
         <div class="col-12 col-md-4 col-lg-3 o-songSection">
             <h1>{{__('Top 10 Singles')}}</h1>
 
@@ -75,5 +75,6 @@
 
         </div>
     </div>
+
 
 @endsection

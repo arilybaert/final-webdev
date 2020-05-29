@@ -35,6 +35,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="nav-link"><a href="{{ route('admin')}}">Home</a></li>
                         <li class="nav-link"><a href="{{ route('admin.blogs')}}">Blogs</a></li>
                         <li class="nav-link"><a href="{{ route('admin.donations')}}">Donations</a></li>
                         <li class="nav-link"><a href="{{ route('admin.about')}}">About</a></li>

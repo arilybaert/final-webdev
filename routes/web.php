@@ -11,6 +11,7 @@ Route::group(['prefix' => '{language}',
 'middleware' => 'setLocale']
         , function () {
             Route::get('/', 'HomeController@getIndex')->name('home');
+            Route::get('/home', 'HomeController@getIndex')->name('home');
 
             Route::get('/blogs', 'BlogsController@getIndex')->name('blogs');
             Route::get('/blogs/{blog?}', 'BlogsController@getBlog')->name('blog.show');
@@ -42,6 +43,12 @@ Route::group(['prefix' => '{language}',
 Auth::routes();
 
 Route::get('/admin', 'AdminController@getIndex')->name('admin');
+Route::get('/admin/topTenSong/edit/{song?}', 'AdminController@editTopTenSong')->name('admin.topTenSong.edit');
+Route::get('/admin/topTenSong/delete/{id}', 'AdminController@getIndex')->name('admin.topTenSong.delete');
+Route::post('/admin/topTenSong/save', 'AdminController@topTenSongSave')->name('admin.topTenSong.save');
+
+Route::get('/admin/albums/edit/{album?}', 'AdminController@getIndex')->name('admin.albums.edit');
+Route::get('/admin/albums/delete/{id}', 'AdminController@getIndex')->name('admin.albums.delete');
 
 Route::get('/admin/blogs', 'AdminController@getBlogs')->name('admin.blogs');
 Route::get('/admin/blogs/create/{blog?}', 'AdminController@editBlogs')->name('admin.blogs.edit');

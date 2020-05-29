@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Blogs;
 use App\Payments;
+use App\Albums;
+use App\Songs;
 
 class AdminController extends Controller
 {
@@ -12,10 +14,72 @@ class AdminController extends Controller
     {
         $this->middleware('auth');
     }
+
+    // HOME
     public function getIndex()
     {
-        return view('admin.index');
+        $albums = Albums::paginate(12);
+        $topTenSongs = Songs::orderBy('id', 'asc')->paginate(12);
+
+        return view('admin.index', [
+            'albums' => $albums,
+            'topTenSongs' => $topTenSongs,
+        ]);
     }
+
+    public function editTopTenSong(Songs $song)
+    {
+        return view('admin.topTenSong.edit', [
+            'song' => $song,
+            ]);
+    }
+
+    public function topTenSongSave(Request $r)
+    {
+        $validationRules = [
+            'name' => 'required',
+            'artist' => 'required',
+            'album_name' => 'required',
+            'album_cover_url' => 'required',
+        ];
+        $data = [
+            'name' => $r->name,
+        ];
+
+        $r->validate($validationRules);
+        $album_data = [
+            'artist' => $r->artist,
+            'name' => $r->album_name,
+            'album_cover_url' => $r->album_cover_url,
+        ];
+
+        if($r->album_id){
+            $album = Albums::where('id', $r->album_id)->first();
+            $album->update($album_data);
+        } else {
+            $album = Albums::create($album_data);
+            $albumID = Albums::getPdo()->lastInsertId();
+            $data = [
+                'name' => $r->name,
+                'album_id' => $albumID,
+            ];
+        }
+
+
+
+        if($r->id) {
+            $song = Songs::where('id', $r->id)->first();
+            //dd($blog);
+            $song->update($data);
+        } else {
+            $song = Songs::create($data);
+        }
+
+
+
+        return redirect()->route('admin');
+    }
+
     // BLOGS
     public function getBlogs()
     {
@@ -160,6 +224,7 @@ class AdminController extends Controller
 
         return redirect()->route('admin.donations');
 
-
     }
+
+
 }
