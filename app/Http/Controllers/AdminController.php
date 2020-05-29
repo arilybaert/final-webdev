@@ -154,4 +154,12 @@ class AdminController extends Controller
 
         return redirect()->route('admin.donations');
     }
+    public function donationDelete(Request $r) {
+
+        Payments::find($r->id)->delete();
+
+        return redirect()->route('admin.donations');
+
+
+    }
 }

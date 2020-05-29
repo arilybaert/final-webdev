@@ -52,7 +52,7 @@ Route::get('/admin/blogs/delete/{id}', 'AdminController@postDelete')->name('admi
 Route::get('/admin/donations', 'AdminController@getDonations')->name('admin.donations');
 Route::get('/admin/donations/edit/{donation?}', 'AdminController@editDonations')->name('admin.donations.edit');
 Route::post('/admin/donations/save', 'AdminController@donationSave')->name('admin.donations.save');
-Route::get('/admin/donations/delete/{id}', 'AdminController@getDonations')->name('admin.donations.delete');
+Route::get('/admin/donations/delete/{id}', 'AdminController@donationDelete')->name('admin.donations.delete');
 
 Route::get('/admin/about', 'AdminController@getIndex')->name('admin.about');
 
