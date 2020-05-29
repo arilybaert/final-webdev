@@ -9,10 +9,10 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <!-- language icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/3.1.0/css/flag-icon.min.css" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
     <link rel="stylesheet" href="{{ mix('/css/main.css') }}">
-  
+
 </head>
 <body>
         <!-- NAVIGATION -->
@@ -46,20 +46,22 @@
                 </li>
 
 
-                  <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle text-white" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{__('Language')}}</a>
-                      
-                      <div class="dropdown-menu" aria-labelledby="dropdown09">
-                        <a class="dropdown-item " href="{{ route(Route::currentRouteName(), 'nl') }}"><span class="flag-icon flag-icon-be"> </span>  NL</a>
-                        <a class="dropdown-item " href="{{ route(Route::currentRouteName(), 'en') }}"><span class="flag-icon flag-icon-us"> </span>  ENG</a>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle text-white" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"> {{__('Language')}}</a>
 
-                      </div>
-                  </li>
-                  <li class="nav-item">
-                    <a href="{{ route('admin')}}">Login</a>
-                  </li>
+                    <div class="dropdown-menu" aria-labelledby="dropdown09">
+                    <a class="dropdown-item " href="{{ route(Route::currentRouteName(), 'nl') }}"><span class="flag-icon flag-icon-be"> </span>  NL</a>
+                    <a class="dropdown-item " href="{{ route(Route::currentRouteName(), 'en') }}"><span class="flag-icon flag-icon-us"> </span>  ENG</a>
 
-                  
+                    </div>
+                </li>
+
+                <li class="nav-item ">
+                    <a class="nav-link text-white a-colornav" href="{{ route('admin')}}">Login</a>
+                </li>
+
+
+
               </ul>
             </div>
         </nav>
@@ -67,4 +69,3 @@
 
 
 
-    

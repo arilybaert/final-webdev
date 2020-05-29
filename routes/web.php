@@ -40,18 +40,19 @@ Route::group(['prefix' => '{language}',
 // });
 
 Auth::routes();
+
 Route::get('/admin', 'AdminController@getIndex')->name('admin');
 
 Route::get('/admin/blogs', 'AdminController@getBlogs')->name('admin.blogs');
-// Route::get('/admin/blogs/create', 'AdminController@createBlogs')->name('admin.blogs.create');
 Route::get('/admin/blogs/create/{blog?}', 'AdminController@editBlogs')->name('admin.blogs.edit');
-
 Route::post('/admin/blogs/save', 'AdminController@postSave')->name('admin.blogs.save');
-
 Route::get('/admin/blogs/delete/{id}', 'AdminController@postDelete')->name('admin.blogs.delete');
 
 
-Route::get('/admin/donations', 'AdminController@getIndex')->name('admin.donations');
+Route::get('/admin/donations', 'AdminController@getDonations')->name('admin.donations');
+Route::get('/admin/donations/edit/{donation?}', 'AdminController@editDonations')->name('admin.donations.edit');
+Route::post('/admin/donations/save', 'AdminController@donationSave')->name('admin.donations.save');
+Route::get('/admin/donations/delete/{id}', 'AdminController@getDonations')->name('admin.donations.delete');
 
 Route::get('/admin/about', 'AdminController@getIndex')->name('admin.about');
 
