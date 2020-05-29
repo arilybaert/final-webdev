@@ -17,79 +17,27 @@
                 {{__('Recent Donations')}}:
             </div>
 
-            <div class="col-12 m-donations">
-                <div class="row">
-                    <div class="col-2 a-donationAmount">
-                        $10
+            @foreach ($donations as $donation)
+                @if ($donation->show === "on")
+                    <div class="col-12 m-donations">
+                        <div class="row">
+                            <div class="col-2 a-donationAmount">
+                            {{$donation->amount}} {{$donation->currency}}
+                            </div>
+                            <div class="col-10 m-donationUserMsg">
+                                <span class="a-donationUserMsg">{{$donation->msg}}</span>
+                                <span class="a-donationUser">By {{$donation->firstname}} {{$donation->lastname}}</span>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-10 m-donationUserMsg">
-                        <span class="a-donationUserMsg">Thank you for all those gorgeous minutes of listening!</span>
-                        <span class="a-donationUser">By Willie Sommers</span>
-                    </div>
-                </div>
+                @endif
+            @endforeach
+
+
+            <div class="col-12">
+                {{ $donations->links() }}
+
             </div>
-
-            <div class="col-12 m-donations">
-                <div class="row">
-                    <div class="col-2 a-donationAmount">
-                        $10
-                    </div>
-                    <div class="col-10 m-donationUserMsg">
-                        <span class="a-donationUserMsg">Thank you for all those gorgeous minutes of listening!</span>
-                        <span class="a-donationUser">By Willie Sommers</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 m-donations">
-                <div class="row">
-                    <div class="col-2 a-donationAmount">
-                        $10
-                    </div>
-                    <div class="col-10 m-donationUserMsg">
-                        <span class="a-donationUserMsg">Thank you for all those gorgeous minutes of listening!</span>
-                        <span class="a-donationUser">By Willie Sommers</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 m-donations">
-                <div class="row">
-                    <div class="col-2 a-donationAmount">
-                        $10
-                    </div>
-                    <div class="col-10 m-donationUserMsg">
-                        <span class="a-donationUserMsg">Thank you for all those gorgeous minutes of listening!</span>
-                        <span class="a-donationUser">By Willie Sommers</span>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12 m-donations">
-                <div class="row">
-                    <div class="col-2 a-donationAmount">
-                        $10
-                    </div>
-                    <div class="col-10 m-donationUserMsg">
-                        <span class="a-donationUserMsg">Thank you for all those gorgeous minutes of listening!</span>
-                        <span class="a-donationUser">By Willie Sommers</span>
-                    </div>
-                </div>
-            </div>
-
-
-            <div class="col-12 m-donations">
-                <div class="row">
-                    <div class="col-2 a-donationAmount">
-                        $10
-                    </div>
-                    <div class="col-10 m-donationUserMsg">
-                        <span class="a-donationUserMsg">Thank you for all those gorgeous minutes of listening!</span>
-                        <span class="a-donationUser">By Willie Sommers</span>
-                    </div>
-                </div>
-            </div>
-
         </div>
     </div>
 

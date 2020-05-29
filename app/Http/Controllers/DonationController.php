@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
 use Illuminate\Support\Facades\Log;
+use App\Payments;
+
 class DonationController extends Controller
 {
     public function getSucces() {
@@ -14,8 +16,10 @@ class DonationController extends Controller
     }
     public function getIndex(Request $r)
     {
-        // dd($r);
-        return view('pages.donations');
+        $donations = Payments::orderBy('created_at', 'desc')->paginate(10);
+        return view('pages.donations', [
+            'donations' => $donations,
+        ]);
     }
 
     public function donationPayment(Request $r)
@@ -72,13 +76,3 @@ class DonationController extends Controller
     }
 }
 
-// /**
-//  * After the customer has completed the transaction,
-//  * you can fetch, check and process the payment.
-//  * (See the webhook docs for more information.)
-//  */
-// if ($payment->isPaid())
-// {
-//     echo 'Payment received.';
-//     // Do your thing ...
-// }
