@@ -25,6 +25,8 @@ Route::group(['prefix' => '{language}',
             Route::get('/about', 'AboutController@getIndex')->name('about');
 
             Route::get('/contact', 'ContactController@getIndex')->name('contact');
+            Route::post('/contact', ['as'=>'contactus.store','uses'=>'ContactController@contactUSPost']);
+            Route::get('contact-us', 'ContactUSController@contactUS');
 
             Route::get('/privacy', 'PrivacyController@getIndex')->name('privacy');
 

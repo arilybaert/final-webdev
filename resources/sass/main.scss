@@ -166,18 +166,18 @@ body{
     a:link {
         color: $color-white;
     }
-    
+
     /* visited link */
     a:visited {
         color: $color-white;
     }
-    
+
     /* mouse over link */
     a:hover {
         color: $color-green;
 
     }
-    
+
     /* selected link */
     a:active {
         color: $color-white;
@@ -206,7 +206,7 @@ body{
 
 .o-blogPosts {
     margin-bottom: 2vw;
-    
+
 
 
 
@@ -336,7 +336,7 @@ body{
 
             display: flex;
             flex-direction: column;
-            
+
             .a-donationUserMsg {
                 font-size: 13pt;
                 color: $color-white;
@@ -366,7 +366,7 @@ body{
         margin-bottom: 1vw;
 
       }
-      
+
       /* The slider itself */
       .slider {
         -webkit-appearance: none;  /* Override default CSS styles */
@@ -380,12 +380,12 @@ body{
         transition: opacity .2s;
         border-radius: 14px;
       }
-      
+
       /* Mouse-over effects */
       .slider:hover {
         opacity: 1; /* Fully shown on mouse-over */
       }
-      
+
       /* The slider handle (use -webkit- (Chrome, Opera, Safari, Edge) and -moz- (Firefox) to override default look) */
       .slider::-webkit-slider-thumb {
         -webkit-appearance: none; /* Override default look */
@@ -395,12 +395,12 @@ body{
         background: #4CAF50; /* Green background */
         cursor: pointer; /* Cursor on hover */
       }
-      
+
       .slider::-moz-range-thumb {
-        width: 25px; 
-        height: 25px; 
-        background: #4CAF50; 
-        cursor: pointer; 
+        width: 25px;
+        height: 25px;
+        background: #4CAF50;
+        cursor: pointer;
       }
 
     .aformLlabel {
@@ -498,15 +498,15 @@ body{
 }
 
 
-// privacy 
+// privacy
 .o-privacy {
     color: $color-white;
     .a-privacyText {
-        
+
     }
-    
+
     .a-ulPrivacy {
-        
+
     }
 }
 
@@ -517,7 +517,7 @@ body{
 
 .o-privacy h1 a {
     color: $color-green;
-    
+
 }
 
 #a-Btngreen {
@@ -539,7 +539,7 @@ body{
     align-items: center;
 
 }
-  
+
   .o-pagination a:hover:not(.actives) {background-color: #ddd;}
 
 
@@ -551,4 +551,17 @@ body{
   .invalid {
     border: 3px solid red !important;
     border-color: red;
+  }
+
+  // newsletter
+  .o-newsletter {
+      height: 100vh;
+      width: 100vw;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: $color-black;
+      color: $color-white;
+
   }
