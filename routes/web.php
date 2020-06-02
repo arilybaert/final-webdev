@@ -26,8 +26,6 @@ Route::group(['prefix' => '{language}',
 
             Route::get('/contact', 'ContactController@getIndex')->name('contact');
             Route::post('/contact', 'ContactController@postContact')->name('contact.save');
-;
-
             Route::get('/privacy', 'PrivacyController@getIndex')->name('privacy');
 
             Route::get('/newsletter','NewsletterController@create')->name('newsletter');
@@ -72,4 +70,5 @@ Route::post('/admin/about/save', 'AdminController@aboutSave')->name('admin.about
 
 Route::get('/admin/contact', 'AdminController@getIndex')->name('admin.contact');
 
-Route::get('/admin.privacy', 'AdminController@getIndex')->name('admin.privacy');
+Route::get('/admin/privacy', 'AdminController@getPrivacy')->name('admin.privacy');
+Route::post('/admin/privacy/save', 'AdminController@privacySave')->name('admin.privacy.save');

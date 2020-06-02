@@ -8,6 +8,7 @@ use App\Payments;
 use App\Albums;
 use App\Songs;
 use App\About;
+use App\Privacy;
 
 class AdminController extends Controller
 {
@@ -314,5 +315,39 @@ class AdminController extends Controller
         }
 
         return redirect()->route('admin.about');
+    }
+
+    public function getPrivacy()
+    {
+        $privacy = Privacy::get()->first();
+
+        return view('admin.privacy.edit', [
+            "privacy" => $privacy,
+        ]);
+    }
+
+    public function privacySave(Request $r)
+    {
+        $validationRules = [
+            'content_nl'=> 'required',
+            'content_en'=> 'required',
+        ];
+        $data = [
+            'content_nl' => $r->content_nl,
+            'content_en'=> $r->content_en,
+        ];
+
+        $r->validate($validationRules);
+        $privacy = Privacy::get()->first();
+
+
+        if($privacy){
+            $privacy = Privacy::get()->first();
+            $privacy->update($data);
+        } else {
+            $privacy = Privacy::create($data);
+        }
+
+        return redirect()->route('admin.privacy');
     }
 }

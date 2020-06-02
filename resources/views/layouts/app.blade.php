@@ -15,6 +15,7 @@
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -39,7 +40,6 @@
                         <li class="nav-link"><a href="{{ route('admin.blogs')}}">Blogs</a></li>
                         <li class="nav-link"><a href="{{ route('admin.donations')}}">Donations</a></li>
                         <li class="nav-link"><a href="{{ route('admin.about')}}">About</a></li>
-                        <li class="nav-link"><a href="{{ route('admin.contact')}}">Contact</a></li>
                         <li class="nav-link"><a href="{{ route('admin.privacy')}}">Privacy</a></li>
                     </ul>
 

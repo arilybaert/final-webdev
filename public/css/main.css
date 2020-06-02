@@ -531,3 +531,7 @@ body {
   color: #FCF4F5;
 }
 
+.tox-notification {
+  display: none !important;
+}
+
