@@ -27,6 +27,13 @@ class AdminController extends Controller
         ]);
     }
 
+    public function editAlbums(Albums $album)
+    {
+        return view('admin.album.edit', [
+            'album' => $album,
+            ]);
+    }
+
     public function editTopTenSong(Songs $song)
     {
         return view('admin.topTenSong.edit', [

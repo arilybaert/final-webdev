@@ -25,8 +25,8 @@ Route::group(['prefix' => '{language}',
             Route::get('/about', 'AboutController@getIndex')->name('about');
 
             Route::get('/contact', 'ContactController@getIndex')->name('contact');
-            Route::post('/contact', ['as'=>'contactus.store','uses'=>'ContactController@contactUSPost']);
-            Route::get('contact-us', 'ContactUSController@contactUS');
+            Route::post('/contact', 'ContactController@postContact')->name('contact.save');
+;
 
             Route::get('/privacy', 'PrivacyController@getIndex')->name('privacy');
 
@@ -45,6 +45,9 @@ Route::group(['prefix' => '{language}',
 Auth::routes();
 
 Route::get('/admin', 'AdminController@getIndex')->name('admin');
+
+Route::get('/admin/topTenSong/edit/{album?}', 'AdminController@editAlbums')->name('admin.album.edit');
+
 Route::get('/admin/topTenSong/edit/{song?}', 'AdminController@editTopTenSong')->name('admin.topTenSong.edit');
 Route::get('/admin/topTenSong/delete/{id}', 'AdminController@getIndex')->name('admin.topTenSong.delete');
 Route::post('/admin/topTenSong/save', 'AdminController@topTenSongSave')->name('admin.topTenSong.save');
