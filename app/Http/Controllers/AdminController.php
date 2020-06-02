@@ -7,6 +7,7 @@ use App\Blogs;
 use App\Payments;
 use App\Albums;
 use App\Songs;
+use App\About;
 
 class AdminController extends Controller
 {
@@ -280,7 +281,38 @@ class AdminController extends Controller
 // about page
     public function getAboutPage()
     {
-        About::get()->first();
-        return view('about.edit');
+        $about = About::get()->first();
+        return view('admin.about.edit', [
+            "about" => $about
+        ]);
+    }
+
+    public function aboutSave(Request $r)
+    {
+        $validationRules = [
+            'title_left_nl'=> 'required',
+            'title_left_en'=> 'required',
+            'content_left_nl'=> 'required',
+            'content_left_en'=> 'required',
+        ];
+        $data = [
+            'title_left_nl' => $r->title_left_nl,
+            'title_left_en'=> $r->title_left_en,
+            'content_left_nl'=> $r->content_left_nl,
+            'content_left_en'=> $r->content_left_en,
+        ];
+
+        $r->validate($validationRules);
+        $about = About::get()->first();
+
+
+        if($about){
+            $about = About::get()->first();
+            $about->update($data);
+        } else {
+            $about = About::create($data);
+        }
+
+        return redirect()->route('admin.about');
     }
 }

@@ -5,8 +5,8 @@
     <div class="col-8">
         <div class="row">
             <div class="col-12">
-                <h1>{{__('Our Mission')}}</h1>
-                <p class="a-missionStatement">{{__('Our mission is to bring good music available to everyone. We at Spotify think that music has the ability to bringe joy and happiness to those who want to. It can set or change any mood if you’ll let it. Music had brought people together since a long time and we plan on keeping it that way.')}} </p>
+                <h1>{{ $about->{"title_left_". app()->getLocale()} }}</h1>
+                <p class="a-missionStatement">{{ $about->{"content_left_".app()->getLocale()} }} </p>
 
             </div>
 
@@ -64,6 +64,6 @@
 
 
 
-    
+
 </div>
 @endsection

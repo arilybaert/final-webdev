@@ -67,6 +67,7 @@ Route::post('/admin/donations/save', 'AdminController@donationSave')->name('admi
 Route::get('/admin/donations/delete/{id}', 'AdminController@donationDelete')->name('admin.donations.delete');
 
 Route::get('/admin/about', 'AdminController@getAboutPage')->name('admin.about');
+Route::post('/admin/about/save', 'AdminController@aboutSave')->name('admin.about.save');
 
 
 Route::get('/admin/contact', 'AdminController@getIndex')->name('admin.contact');
