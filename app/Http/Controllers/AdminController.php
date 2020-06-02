@@ -34,6 +34,43 @@ class AdminController extends Controller
             ]);
     }
 
+    public function albumSave(Request $r)
+    {
+        $validationRules = [
+            'name'=> 'required',
+            'artist'=> 'required',
+            'release_date'=> 'required',
+            'album_cover_url'=> 'required',
+        ];
+        $data = [
+            'name' => $r->name,
+            'artist'=> $r->artist,
+            'release_date'=> $r->release_date,
+            'album_cover_url'=> $r->album_cover_url,
+        ];
+
+        $r->validate($validationRules);
+
+
+        if($r->id){
+            $album = Albums::where('id', $r->id)->first();
+            $album->update($data);
+        } else {
+            $album = Albums::create($data);
+        }
+
+        return redirect()->route('admin');
+    }
+
+    public function albumDelete(Request $r)
+    {
+
+        Albums::find($r->id)->delete();
+
+        return redirect()->route('admin');
+
+    }
+
     public function editTopTenSong(Songs $song)
     {
         return view('admin.topTenSong.edit', [
@@ -83,6 +120,13 @@ class AdminController extends Controller
         }
 
 
+
+        return redirect()->route('admin');
+    }
+
+    public function topTenSongDelete(Request $r)
+    {
+        Songs::find($r->id)->delete();
 
         return redirect()->route('admin');
     }
@@ -233,5 +277,10 @@ class AdminController extends Controller
 
     }
 
-
+// about page
+    public function getAboutPage()
+    {
+        About::get()->first();
+        return view('about.edit');
+    }
 }

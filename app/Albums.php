@@ -18,7 +18,7 @@ class Albums extends Model
             'artist',
             'release_date',
             'album_cover_url',
-            'lbum_cover_path',
+            'album_cover_path',
 
     ];
 }

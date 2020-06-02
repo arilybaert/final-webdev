@@ -46,14 +46,14 @@ Auth::routes();
 
 Route::get('/admin', 'AdminController@getIndex')->name('admin');
 
-Route::get('/admin/topTenSong/edit/{album?}', 'AdminController@editAlbums')->name('admin.album.edit');
+Route::get('/admin/album/edit/{album?}', 'AdminController@editAlbums')->name('admin.album.edit');
+Route::post('/admin/album/save', 'AdminController@albumSave')->name('admin.album.save');
+Route::get('/admin/album/delete/{id}', 'AdminController@albumDelete')->name('admin.album.delete');
 
 Route::get('/admin/topTenSong/edit/{song?}', 'AdminController@editTopTenSong')->name('admin.topTenSong.edit');
-Route::get('/admin/topTenSong/delete/{id}', 'AdminController@getIndex')->name('admin.topTenSong.delete');
+Route::get('/admin/topTenSong/delete/{id}', 'AdminController@topTenSongDelete')->name('admin.topTenSong.delete');
 Route::post('/admin/topTenSong/save', 'AdminController@topTenSongSave')->name('admin.topTenSong.save');
 
-Route::get('/admin/albums/edit/{album?}', 'AdminController@getIndex')->name('admin.albums.edit');
-Route::get('/admin/albums/delete/{id}', 'AdminController@getIndex')->name('admin.albums.delete');
 
 Route::get('/admin/blogs', 'AdminController@getBlogs')->name('admin.blogs');
 Route::get('/admin/blogs/create/{blog?}', 'AdminController@editBlogs')->name('admin.blogs.edit');
@@ -66,7 +66,7 @@ Route::get('/admin/donations/edit/{donation?}', 'AdminController@editDonations')
 Route::post('/admin/donations/save', 'AdminController@donationSave')->name('admin.donations.save');
 Route::get('/admin/donations/delete/{id}', 'AdminController@donationDelete')->name('admin.donations.delete');
 
-Route::get('/admin/about', 'AdminController@getIndex')->name('admin.about');
+Route::get('/admin/about', 'AdminController@getAboutPage')->name('admin.about');
 
 
 Route::get('/admin/contact', 'AdminController@getIndex')->name('admin.contact');

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-6">
-            <a href="{{ route('admin.albums.edit')}}" type="button" class="btn btn-primary">Create</a>
+            <a href="{{ route('admin.album.edit')}}" type="button" class="btn btn-primary">Create</a>
         </div>
         <div class="col-6">
             <a href="{{ route('admin.topTenSong.edit')}}" type="button" class="btn btn-primary">Create</a>
@@ -26,8 +26,8 @@
                         <td>{{ $album->artist }}</td>
                         <td>{{ $album->release_date }}</td>
                         <td>
-                            <a href="{{ route('admin.albums.edit', $album->id)}}" type="button" class="btn btn-primary">Edit</a>
-                            <a href="{{route('admin.albums.delete', $album->id)}}" type="button" class="btn btn-danger">Delete</a>
+                            <a href="{{ route('admin.album.edit', $album->id)}}" type="button" class="btn btn-primary">Edit</a>
+                            <a href="{{route('admin.album.delete', $album->id)}}" type="button" class="btn btn-danger">Delete</a>
 
 
                         </td>
