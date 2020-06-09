@@ -10,8 +10,10 @@
             <table class="table table-striped table-dark">
                 <thead>
                   <tr>
-                    <th scope="col">Title</th>
-                    <th scope="col">Intro</th>
+                    <th scope="col">Title NL</th>
+                    <th scope="col">Title EN</th>
+                    <th scope="col">Intro NL</th>
+                    <th scope="col">Intro EN</th>
 
                   </tr>
                 </thead>
@@ -27,7 +29,7 @@
                             <form action="{{ route('admin.pages.delete', $page->id) }}" method="post">
                                 @csrf
                                 <input type="hidden" name="id" value="{{$page->id}}">
-                                <button class="btn-danger">Delete</button>
+                                <button class="btn btn-danger">Delete</button>
                             </form>
                             {{-- <a href="{{route('admin.blogs.delete', $blog->id)}}" type="button" class="btn btn-danger">Delete</a> --}}
 

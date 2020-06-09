@@ -44,8 +44,7 @@
                         <li class="nav-link"><a href="{{ route('admin')}}">Home</a></li>
                         <li class="nav-link"><a href="{{ route('admin.blogs')}}">Blogs</a></li>
                         <li class="nav-link"><a href="{{ route('admin.donations')}}">Donations</a></li>
-                        <li class="nav-link"><a href="{{ route('admin.about')}}">About</a></li>
-                        <li class="nav-link"><a href="{{ route('admin.privacy')}}">Privacy</a></li>
+                        <li class="nav-link"><a href="{{ route('admin.pages.index')}}">Pages</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->

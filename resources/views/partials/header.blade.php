@@ -29,9 +29,10 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
               <ul class="nav navbar-nav ml-auto">
-                <!-- <li class="nav-item active">
-                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-                </li> -->
+
+                <li class="nav-item">
+                    <a class="nav-link a-colornav text-white {{ (request()->is('home')) ? 'active' : '' }}" href="{{ route('home', app()->getLocale()) }}">{{__('Home')}}</a>
+                  </li>
                 <li class="nav-item">
                   <a class="nav-link a-colornav text-white {{ (request()->is('blogs')) ? 'active' : '' }}" href="{{ route('blogs', app()->getLocale()) }}">{{__('Blogs')}}</a>
                 </li>

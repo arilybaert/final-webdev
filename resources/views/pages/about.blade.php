@@ -5,8 +5,8 @@
     <div class="col-8">
         <div class="row">
             <div class="col-12">
-                <h1>{{ $about->{"title_left_". app()->getLocale()} }}</h1>
-                <p class="a-missionStatement">{{ $about->{"content_left_".app()->getLocale()} }} </p>
+                <h1>{{ $about->{"title_". app()->getLocale()} }}</h1>
+                <p class="a-missionStatement">{{ $about->{"content_".app()->getLocale()} }} </p>
 
             </div>
 
