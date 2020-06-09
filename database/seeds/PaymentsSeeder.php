@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Payments;
+use App\Payment;
 
 class PaymentsSeeder extends Seeder
 {
@@ -14,7 +14,7 @@ class PaymentsSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        $db_payment = new Payments();
+        $db_payment = new Payment();
 
         $db_payment->firstname = $faker->firstName();
         $db_payment->lastname = $faker->lastName();

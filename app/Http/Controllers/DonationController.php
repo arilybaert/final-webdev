@@ -5,18 +5,18 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Mollie\Laravel\Facades\Mollie;
 use Illuminate\Support\Facades\Log;
-use App\Payments;
+use App\Payment;
 
 class DonationController extends Controller
 {
     public function getSucces() {
-        Log::info('Betaling is gelukt');
+        //Log::info('Betaling is gelukt');
 
-        dd('je betaling is gelukt');
+        // dd('je betaling is gelukt');
     }
     public function getIndex(Request $r)
     {
-        $donations = Payments::orderBy('created_at', 'desc')->paginate(10);
+        $donations = Payment::orderBy('created_at', 'desc')->paginate(10);
         return view('pages.donations', [
             'donations' => $donations,
         ]);
@@ -64,8 +64,8 @@ class DonationController extends Controller
                 'amount' => $r->amount
             ],
 
-            'webhookUrl' => 'https://425cb2323cf6.ngrok.io/webhooks/mollie',
-            // "webhookUrl" => route('webhooks.mollie'),
+            //'webhookUrl' => ' https://931103da3df6.ngrok.io/webhooks/mollie',
+            "webhookUrl" => route('webhooks.mollie'),
             "redirectUrl" => route('donations.succes', app()->getLocale()),
         ]);
 

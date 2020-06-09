@@ -3,12 +3,14 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 use App\Blogs;
 use App\Payments;
 use App\Albums;
 use App\Songs;
 use App\About;
 use App\Privacy;
+use App\Page;
 
 class AdminController extends Controller
 {
@@ -17,6 +19,66 @@ class AdminController extends Controller
         $this->middleware('auth');
     }
 
+    // test dashboardcontroller
+    public function getIndexPages()
+    {
+        $pages = Page::all();
+        return view('admin.pages.index', [
+            "pages" => $pages
+        ]);
+    }
+    public function getCreatePage()
+    {
+        return view('admin.pages.create');
+    }
+    public function postCreatePage(Request $r)
+    {
+        $page = new Page();
+        $page->slug = str::snake($r->title_nl);
+        $page->title_nl = $r->title_nl;
+        $page->title_en = $r->title_en;
+        $page->intro_nl = $r->intro_nl;
+        $page->intro_en = $r->intro_en;
+        $page->content_nl = $r->content_nl;
+        $page->content_en = $r->content_en;
+        $page->template = $r->template;
+
+
+        $page->save();
+
+        return redirect()->route('admin.pages.index');
+    }
+    public function getEditPage(Page $page)
+    {
+        return view('admin.pages.edit', [
+            "page" => $page
+        ]);
+    }
+    public function postEditPage(Page $page, Request $r)
+    {
+        if($r->id != $page->id) abort('403', 'Ela, dat mag niet!');
+
+        $page->slug = str::snake($r->title_nl);
+        $page->title_nl = $r->title_nl;
+        $page->title_en = $r->title_en;
+        $page->intro_nl = $r->intro_nl;
+        $page->intro_en = $r->intro_en;
+        $page->content_nl = $r->content_nl;
+        $page->content_en = $r->content_en;
+        $page->template = $r->template;
+
+        $page->save();
+
+        return redirect()->route('admin.pages.index');
+    }
+    public function postDeletePage(Page $page, Request $r)
+    {
+        if($r->id != $page->id) abort('403', 'Ela, dat mag niet!');
+
+        $page->delete();
+        return redirect()->route('admin.pages.index');
+
+    }
     // HOME
     public function getIndex()
     {

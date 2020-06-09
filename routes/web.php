@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::name('webhooks.mollie')->any('webhooks/mollie', 'WebhookController@handle');
+
 Route::redirect('/', '/en');
 
 Route::group(['prefix' => '{language}',
@@ -30,6 +31,9 @@ Route::group(['prefix' => '{language}',
 
             Route::get('/newsletter','NewsletterController@create')->name('newsletter');
             Route::post('/newsletter','NewsletterController@store');
+
+            Route::get('/{page?}', 'PagesController@getPage')->name('page');
+
 });
 
 
@@ -44,6 +48,14 @@ Auth::routes();
 
 Route::get('/admin', 'AdminController@getIndex')->name('admin');
 
+// test video create pages
+Route::get('admin/pages', 'AdminController@getIndexPages')->name('admin.pages.index');
+Route::get('admin/pages/create', 'AdminController@getCreatePage')->name('admin.pages.create');
+Route::post('admin/pages/create','AdminController@postCreatePage')->name('admin.pages.create');
+Route::get('admin/pages/edit/{page}', 'AdminController@getEditPage')->name('admin.pages.edit');
+Route::post('admin/pages/edit/{page}','AdminController@postEditPage')->name('admin.pages.edit');
+Route::post('admin/pages/delete/{page}', 'AdminController@postDeletePage')->name('admin.pages.delete');
+// end test
 Route::get('/admin/album/edit/{album?}', 'AdminController@editAlbums')->name('admin.album.edit');
 Route::post('/admin/album/save', 'AdminController@albumSave')->name('admin.album.save');
 Route::get('/admin/album/delete/{id}', 'AdminController@albumDelete')->name('admin.album.delete');

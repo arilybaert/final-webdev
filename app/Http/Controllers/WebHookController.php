@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Log;
 use Mollie\Laravel\Facades\Mollie;
 
 use Illuminate\Http\Request;
-use App\Payments;
+use App\Payment;
 
 class WebHookController extends Controller
 {
@@ -19,8 +19,9 @@ class WebHookController extends Controller
 
         $payment = Mollie::api()->payments()->get($request->id);
 
+
         if ($payment->isPaid()) {
-            $db_payment = new Payments();
+            $db_payment = new Payment();
 
             $db_payment->firstname = $payment->metadata->firstname;
             $db_payment->lastname = $payment->metadata->lastname;
@@ -29,9 +30,8 @@ class WebHookController extends Controller
             $db_payment->show = $payment->metadata->show;
             $db_payment->amount = $payment->amount->value;
             $db_payment->currency = $payment->amount->currency;
-
             $db_payment->save();
-            dd($payment->metadata);
+
             Log::info(json_encode($payment));
             Log::info('Betaling is gelukt');
         } else {
