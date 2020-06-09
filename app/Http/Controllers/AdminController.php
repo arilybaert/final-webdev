@@ -5,12 +5,13 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Str;
 use App\Blogs;
-use App\Payments;
+use App\Payment;
 use App\Albums;
 use App\Songs;
 use App\About;
 use App\Privacy;
 use App\Page;
+use App\Key;
 
 class AdminController extends Controller
 {
@@ -285,13 +286,13 @@ class AdminController extends Controller
     // DONATIONS
     public function getDonations()
     {
-        $donations = Payments::paginate(12);
+        $donations = Payment::paginate(12);
 
         return view('admin.donations.index', [
             'donations' => $donations,
         ]);
     }
-    public function editDonations(Payments $donation)
+    public function editDonations(Payment $donation)
     {
         return view('admin.donations.edit', [
         'donation' => $donation,
@@ -323,11 +324,11 @@ class AdminController extends Controller
         ];
         //dd($data);
         if($r->id) {
-            $donation = Payments::where('id', $r->id)->first();
+            $donation = Payment::where('id', $r->id)->first();
             //dd($blog);
             $donation->update($data);
         } else {
-            $donation = Payments::create($data);
+            $donation = Payment::create($data);
         }
 
 
@@ -335,7 +336,7 @@ class AdminController extends Controller
     }
     public function donationDelete(Request $r) {
 
-        Payments::find($r->id)->delete();
+        Payment::find($r->id)->delete();
 
         return redirect()->route('admin.donations');
 
@@ -411,5 +412,31 @@ class AdminController extends Controller
         }
 
         return redirect()->route('admin.privacy');
+    }
+
+    // manage mailchimp api keys
+
+    public function getKey()
+    {
+        $keys = Key::get();
+
+        return view('admin.apikey.index', [
+            "keys" => $keys,
+        ]);
+    }
+
+    public function editKey()
+    {
+
+    }
+
+    public function keySave(Request $r)
+    {
+        dd($r);
+    }
+
+    public function keyDelete()
+    {
+
     }
 }

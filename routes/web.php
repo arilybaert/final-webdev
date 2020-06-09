@@ -27,13 +27,13 @@ Route::group(['prefix' => '{language}',
 
             Route::get('/contact', 'ContactController@getIndex')->name('contact');
             Route::post('/contact', 'ContactController@postContact')->name('contact.save');
+
             Route::get('/privacy', 'PrivacyController@getIndex')->name('privacy');
 
             Route::get('/newsletter','NewsletterController@create')->name('newsletter');
             Route::post('/newsletter','NewsletterController@store');
 
             Route::get('/{page?}', 'PagesController@getPage')->name('page');
-
 });
 
 
@@ -76,11 +76,13 @@ Route::get('/admin/donations/edit/{donation?}', 'AdminController@editDonations')
 Route::post('/admin/donations/save', 'AdminController@donationSave')->name('admin.donations.save');
 Route::get('/admin/donations/delete/{id}', 'AdminController@donationDelete')->name('admin.donations.delete');
 
-Route::get('/admin/about', 'AdminController@getAboutPage')->name('admin.about');
-Route::post('/admin/about/save', 'AdminController@aboutSave')->name('admin.about.save');
+
 
 
 Route::get('/admin/contact', 'AdminController@getIndex')->name('admin.contact');
 
-Route::get('/admin/privacy', 'AdminController@getPrivacy')->name('admin.privacy');
-Route::post('/admin/privacy/save', 'AdminController@privacySave')->name('admin.privacy.save');
+
+Route::get('/admin/apikey', 'AdminController@getKey')->name('admin.apikey');
+Route::get('/admin/apikey/edit/{id?}', 'AdminController@editKey')->name('admin.apikey.edit');
+Route::post('/admin/apikey/save', 'AdminController@keySave')->name('admin.apikey.save');
+Route::get('/admin/apikey/delete/{id}', 'AdminController@keyDelete')->name('admin.apikey.delete');
