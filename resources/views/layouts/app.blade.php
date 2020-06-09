@@ -45,6 +45,7 @@
                         <li class="nav-link"><a href="{{ route('admin.blogs')}}">Blogs</a></li>
                         <li class="nav-link"><a href="{{ route('admin.donations')}}">Donations</a></li>
                         <li class="nav-link"><a href="{{ route('admin.pages.index')}}">Pages</a></li>
+                        <li class="nav-link"><a href="{{ route('admin.apikey')}}">ApiKey</a></li>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
