@@ -11,6 +11,7 @@ class ContactController extends Controller
     {
         return view('pages.contact');
     }
+
     public function postContact(Request $r)
     {
 
@@ -33,6 +34,5 @@ class ContactController extends Controller
 
         });
         return view('mail.confirm');
-
     }
 }

@@ -13,12 +13,13 @@ use App\Key;
 
 class AdminController extends Controller
 {
+    // Secure admin controller
     public function __construct()
     {
         $this->middleware('auth');
     }
 
-    // test dashboardcontroller
+    ////////////////////////////////////////////////////////////////  PAGES
     public function getIndexPages()
     {
         $pages = Page::all();
@@ -47,12 +48,14 @@ class AdminController extends Controller
 
         return redirect()->route('admin.pages.index');
     }
+
     public function getEditPage(Page $page)
     {
         return view('admin.pages.edit', [
             "page" => $page
         ]);
     }
+
     public function postEditPage(Page $page, Request $r)
     {
         if($r->id != $page->id) abort('403', 'Ela, dat mag niet!');
@@ -70,6 +73,7 @@ class AdminController extends Controller
 
         return redirect()->route('admin.pages.index');
     }
+
     public function postDeletePage(Page $page, Request $r)
     {
         if($r->id != $page->id) abort('403', 'Ela, dat mag niet!');
@@ -78,7 +82,9 @@ class AdminController extends Controller
         return redirect()->route('admin.pages.index');
 
     }
-    // HOME
+
+    //////////////////////////////////////////////////////////////// HOME
+
     public function getIndex()
     {
         $albums = Albums::paginate(12);
@@ -172,8 +178,6 @@ class AdminController extends Controller
             ];
         }
 
-
-
         if($r->id) {
             $song = Songs::where('id', $r->id)->first();
             //dd($blog);
@@ -181,8 +185,6 @@ class AdminController extends Controller
         } else {
             $song = Songs::create($data);
         }
-
-
 
         return redirect()->route('admin');
     }
@@ -194,7 +196,8 @@ class AdminController extends Controller
         return redirect()->route('admin');
     }
 
-    // BLOGS
+    //////////////////////////////////////////////////////////////// BLOGS
+
     public function getBlogs()
     {
         $blogs = Blogs::paginate(12);
@@ -216,7 +219,6 @@ class AdminController extends Controller
     }
 
     public function postSave(Request $r) {
-        //dd($r->id);
 
         $validationRules = [
             'title_nl' => 'required|max:10',
@@ -231,13 +233,6 @@ class AdminController extends Controller
 
             'image' => 'required',
         ];
-        // // update client
-        // if($r->id){
-        //      $r->id;
-        // } else {
-        //     // create client
-        //     $validationRules['email'] = 'required|email|max:255|unique:clients,email';
-        // }
 
         $r->validate($validationRules);
 
@@ -254,10 +249,9 @@ class AdminController extends Controller
 
             'image' => $r->image,
         ];
-        //dd($data);
+
         if($r->id) {
             $blog = Blogs::where('id', $r->id)->first();
-            //dd($blog);
             $blog->update($data);
         } else {
             $blog = Blogs::create($data);
@@ -271,17 +265,11 @@ class AdminController extends Controller
 
         Blogs::find($r->id)->delete();
 
-        // foreach ($reservations as $reservation) {
-        //     Reservations::find($reservation->id)->delete();
-        // };
-
-        // Client::find($request->clientId)->delete();
         return redirect()->route('admin.blogs');
-
-
     }
 
-    // DONATIONS
+    ///////////////////////////////////////////////////////////////// DONATIONS
+
     public function getDonations()
     {
         $donations = Payment::paginate(12);
@@ -290,12 +278,14 @@ class AdminController extends Controller
             'donations' => $donations,
         ]);
     }
+
     public function editDonations(Payment $donation)
     {
         return view('admin.donations.edit', [
         'donation' => $donation,
         ]);
     }
+
     public function donationSave(Request $r) {
 
         $validationRules = [
@@ -320,7 +310,7 @@ class AdminController extends Controller
             'currency' => $r->currency,
             'show' => $r->show,
         ];
-        //dd($data);
+
         if($r->id) {
             $donation = Payment::where('id', $r->id)->first();
             //dd($blog);
@@ -329,18 +319,17 @@ class AdminController extends Controller
             $donation = Payment::create($data);
         }
 
-
         return redirect()->route('admin.donations');
     }
+
     public function donationDelete(Request $r) {
 
         Payment::find($r->id)->delete();
 
         return redirect()->route('admin.donations');
-
     }
 
-    // manage mailchimp api keys
+    //////////////////////////////////////////////////////////////// manage mailchimp api keys
 
     public function getKey()
     {

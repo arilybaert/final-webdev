@@ -10,9 +10,7 @@ use App\Payment;
 class DonationController extends Controller
 {
     public function getSucces() {
-        //Log::info('Betaling is gelukt');
 
-        // dd('je betaling is gelukt');
     }
     public function getIndex(Request $r)
     {
@@ -44,9 +42,7 @@ class DonationController extends Controller
             'show' => $r->show,
             'amount' => $r->amount,
         ];
-        //dd($data);
         $value = (string) number_format($r->amount, 2, '.', '');
-        // dd($value);
 
         $payment = Mollie::api()->payments->create([
             'amount' => [

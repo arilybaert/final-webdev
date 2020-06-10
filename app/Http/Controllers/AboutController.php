@@ -10,6 +10,7 @@ class AboutController extends Controller
 {
     public function getIndex()
     {
+        // search in database for the about page
         $about = Page::where('slug', 'about')->first();
 
         return view('pages.about', [

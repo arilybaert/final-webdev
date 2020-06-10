@@ -16,7 +16,7 @@ class NewsletterController extends Controller
     public function store(Request $request)
     {
 
-        // look in db for an active api key
+        // Look in db for an active api key
         $keys = Key::where('active', '1')->first();
 
         config()->set([
@@ -24,7 +24,6 @@ class NewsletterController extends Controller
             "newsletter.lists.subscribers.id" => $keys->newschimp_list_id
 
         ]);
-        // dd($keys->newschimp_api_key);
 
         if ( ! Newsletter::isSubscribed($request->email) )
         {
@@ -33,12 +32,10 @@ class NewsletterController extends Controller
             return view('newsletter',[
                 "message" => 'Thanks For Subscribe'
             ]);
-            // return redirect('newsletter'. app()->getLocale())->with('success', 'Thanks For Subscribe');
         }
         return view('newsletter',[
             "message" => "You have already subscribed"
         ]);
-        // return redirect("newslettrer" .  app()->getLocale())->with('failure', 'Sorry! You have already subscribed ');
 
     }
 }

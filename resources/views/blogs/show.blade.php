@@ -12,11 +12,11 @@
             </div>
         </div>
         <div class="row ">
-            <div class="col-8">
+            <div class="col-12 col-md-8">
                 <p class="a-blogSynopsis">
 
                     {{ $blog->{"intro_". app()->getLocale()} }}
-                
+
                 </p>
                 <p class="a-blogContent">
 
@@ -24,7 +24,7 @@
 
                 </p>
             </div>
-            <div class="col-4 o-blogImgcontainer">
+            <div class="col-12 col-md-4 o-blogImgcontainer">
                 <img src="{{ $blog->image }}" alt="blog post image" class="a-blogShowImg">
                 <span class="a-blogTag">
 

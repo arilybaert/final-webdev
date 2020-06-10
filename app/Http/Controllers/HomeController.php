@@ -26,12 +26,11 @@ class HomeController extends Controller
     public function getIndex()
     {
 
-
+        // Divide albums per date category
         $classics = Albums::where('release_date', '<', '1990-01-01')->get();
         $newReleases = Albums::where('release_date', '>', now()->subDays(90))->get();
         $futureClassics = Albums::whereBetween('release_date',['1990-01-01', '2000-01-01'])->get();
 
-        //$songs = Songs::get();
         $topTenSongs = Songs::orderBy('id', 'asc')->get();
 
 

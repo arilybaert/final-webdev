@@ -3,45 +3,9 @@
 
 @section('content')
 <div class="row o-dontations-page">
-    <div class="col-6">
-        <div class="row">
-            <div class="col-12 a-donationsMsg__big">
-                {{__('Thanks')}}!
-            </div>
-            <div class="col-12 a-donationsMsg__small">
-                <p class="a-donationsMsg_small">
-                   {{__('Without you this wouldn’t be possible. This donations will be put to good use so we can keep providing you with quality music from all of over the world')}}
-                </p>
-            </div>
-            <div class="col-12 a-recentDonations">
-                {{__('Recent Donations')}}:
-            </div>
-
-            @foreach ($donations as $donation)
-                @if ($donation->show === "on")
-                    <div class="col-12 m-donations">
-                        <div class="row">
-                            <div class="col-2 a-donationAmount">
-                            {{$donation->amount}} {{$donation->currency}}
-                            </div>
-                            <div class="col-10 m-donationUserMsg">
-                                <span class="a-donationUserMsg">{{$donation->msg}}</span>
-                                <span class="a-donationUser">By {{$donation->firstname}} {{$donation->lastname}}</span>
-                            </div>
-                        </div>
-                    </div>
-                @endif
-            @endforeach
 
 
-            <div class="col-12">
-                {{ $donations->links() }}
-
-            </div>
-        </div>
-    </div>
-
-    <div class="col-6 o-donationsForm">
+    <div class="col-12 col-md-6 o-donationsForm">
         <div class="row">
             <div class="col-12">
                 <h1>{{__('Want to support our cause?')}}</h1>
@@ -84,6 +48,45 @@
             </div>
         </div>
     </div>
+
+    <div class="col-12 col-md-6">
+        <div class="row">
+            <div class="col-12 a-donationsMsg__big">
+                {{__('Thanks')}}!
+            </div>
+            <div class="col-12 a-donationsMsg__small">
+                <p class="a-donationsMsg_small">
+                   {{__('Without you this wouldn’t be possible. This donations will be put to good use so we can keep providing you with quality music from all of over the world')}}
+                </p>
+            </div>
+            <div class="col-12 a-recentDonations">
+                {{__('Recent Donations')}}:
+            </div>
+
+            @foreach ($donations as $donation)
+                @if ($donation->show === "on")
+                    <div class="col-12 m-donations">
+                        <div class="row">
+                            <div class="col-2 a-donationAmount">
+                            {{$donation->amount}} {{$donation->currency}}
+                            </div>
+                            <div class="col-10 m-donationUserMsg">
+                                <span class="a-donationUserMsg">{{$donation->msg}}</span>
+                                <span class="a-donationUser">By {{$donation->firstname}} {{$donation->lastname}}</span>
+                            </div>
+                        </div>
+                    </div>
+                @endif
+            @endforeach
+
+
+            <div class="col-12">
+                {{ $donations->links() }}
+
+            </div>
+        </div>
+    </div>
+
 </div>
 <script type="text/javascript" src="{{ URL::asset('js/app.js') }}"></script>
 
