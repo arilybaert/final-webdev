@@ -8,8 +8,6 @@ use App\Blogs;
 use App\Payment;
 use App\Albums;
 use App\Songs;
-use App\About;
-use App\Privacy;
 use App\Page;
 use App\Key;
 
@@ -342,78 +340,6 @@ class AdminController extends Controller
 
     }
 
-// // about page
-//     public function getAboutPage()
-//     {
-//         $about = About::get()->first();
-//         return view('admin.about.edit', [
-//             "about" => $about
-//         ]);
-//     }
-
-//     public function aboutSave(Request $r)
-//     {
-//         $validationRules = [
-//             'title_left_nl'=> 'required',
-//             'title_left_en'=> 'required',
-//             'content_left_nl'=> 'required',
-//             'content_left_en'=> 'required',
-//         ];
-//         $data = [
-//             'title_left_nl' => $r->title_left_nl,
-//             'title_left_en'=> $r->title_left_en,
-//             'content_left_nl'=> $r->content_left_nl,
-//             'content_left_en'=> $r->content_left_en,
-//         ];
-
-//         $r->validate($validationRules);
-//         $about = About::get()->first();
-
-
-//         if($about){
-//             $about = About::get()->first();
-//             $about->update($data);
-//         } else {
-//             $about = About::create($data);
-//         }
-
-//         return redirect()->route('admin.about');
-//     }
-
-//     public function getPrivacy()
-//     {
-//         $privacy = Privacy::get()->first();
-
-//         return view('admin.privacy.edit', [
-//             "privacy" => $privacy,
-//         ]);
-//     }
-
-//     public function privacySave(Request $r)
-//     {
-//         $validationRules = [
-//             'content_nl'=> 'required',
-//             'content_en'=> 'required',
-//         ];
-//         $data = [
-//             'content_nl' => $r->content_nl,
-//             'content_en'=> $r->content_en,
-//         ];
-
-//         $r->validate($validationRules);
-//         $privacy = Privacy::get()->first();
-
-
-//         if($privacy){
-//             $privacy = Privacy::get()->first();
-//             $privacy->update($data);
-//         } else {
-//             $privacy = Privacy::create($data);
-//         }
-
-//         return redirect()->route('admin.privacy');
-//     }
-
     // manage mailchimp api keys
 
     public function getKey()
@@ -423,11 +349,6 @@ class AdminController extends Controller
         return view('admin.apikey.index', [
             "keys" => $keys,
         ]);
-    }
-
-    public function editKey()
-    {
-
     }
 
     public function keySave(Request $r)
@@ -444,10 +365,14 @@ class AdminController extends Controller
                 "newschimp_api_key" => $apikey[$i],
                 "newschimp_list_id" => $list_id[$i],
                 "active" => $actives[$i],
-                "id" => $id[$i],
+                // "id" => $id[$i],
             ];
-            $key = Key::where('id', $keys["id"])->first();
-            $key->update($keys);
+            if($id[$i] != "new"){
+                $key = Key::where('id', $id[$i])->first();
+                $key->update($keys);
+            } else if(strlen($keys["newschimp_api_key"]) > 0  && strlen($keys["newschimp_list_id"]) > 0) {
+                Key::create($keys);
+            }
         }
 
         return redirect()->route('admin.apikey');

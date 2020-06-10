@@ -3,9 +3,7 @@
 @section('content')
 <div class="container">
     <div class="row justify-content-center">
-      <div class="col-12">
-        <a href="{{ route('admin.apikey.edit')}}" type="button" class="btn btn-primary">Create</a>
-      </div>
+
         <div class="col-md-12">
             <form action="{{ route('admin.apikey.save') }}" method="POST">
                 @csrf
@@ -45,6 +43,29 @@
                             </td>
                         </tr>
                       @endforeach
+                      <tr>
+                        <td>
+                            <input type="text" class=" form-control" name="newschimp_api_key[]" >
+                            <input type="hidden" class="form-control" id="id" name="id[]" value="new">
+
+                        </td>
+                        <td>
+                            <input type="text" class=" form-control"  id="newschimp_list_id" name="newschimp_list_id[]" >
+                        </td>
+                        <td>
+                            <div class="form-group">
+                                <select class="form-control" id="active" name="active[]">
+                                  <option value="0" >No</option>
+                                  <option value="1" >Yes</option>
+                                </select>
+                              </div>
+
+                        </td>
+                        <td>
+
+
+                        </td>
+                      </tr>
 
                     </tbody>
                 </table>

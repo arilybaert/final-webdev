@@ -3,10 +3,12 @@
 use Illuminate\Support\Facades\Route;
 
 
+// Mollie route
 Route::name('webhooks.mollie')->any('webhooks/mollie', 'WebhookController@handle');
 
 Route::redirect('/', '/en');
 
+// Client routes
 Route::group(['prefix' => '{language}',
 'where' => ['language' => '[a-zA-Z]{2}'],
 'middleware' => 'setLocale']
@@ -37,25 +39,19 @@ Route::group(['prefix' => '{language}',
 });
 
 
-
-
-// Route::get('/test', function () {
-//     App::setLocale('eng');
-//     dd(App::getLocale());
-// });
+// Admin routes
 
 Auth::routes();
 
 Route::get('/admin', 'AdminController@getIndex')->name('admin');
 
-// test video create pages
 Route::get('admin/pages', 'AdminController@getIndexPages')->name('admin.pages.index');
 Route::get('admin/pages/create', 'AdminController@getCreatePage')->name('admin.pages.create');
 Route::post('admin/pages/create','AdminController@postCreatePage')->name('admin.pages.create');
 Route::get('admin/pages/edit/{page}', 'AdminController@getEditPage')->name('admin.pages.edit');
 Route::post('admin/pages/edit/{page}','AdminController@postEditPage')->name('admin.pages.edit');
 Route::post('admin/pages/delete/{page}', 'AdminController@postDeletePage')->name('admin.pages.delete');
-// end test
+
 Route::get('/admin/album/edit/{album?}', 'AdminController@editAlbums')->name('admin.album.edit');
 Route::post('/admin/album/save', 'AdminController@albumSave')->name('admin.album.save');
 Route::get('/admin/album/delete/{id}', 'AdminController@albumDelete')->name('admin.album.delete');
@@ -77,12 +73,6 @@ Route::post('/admin/donations/save', 'AdminController@donationSave')->name('admi
 Route::get('/admin/donations/delete/{id}', 'AdminController@donationDelete')->name('admin.donations.delete');
 
 
-
-
-Route::get('/admin/contact', 'AdminController@getIndex')->name('admin.contact');
-
-
 Route::get('/admin/apikey', 'AdminController@getKey')->name('admin.apikey');
-Route::get('/admin/apikey/edit/{id?}', 'AdminController@editKey')->name('admin.apikey.edit');
 Route::post('/admin/apikey/save', 'AdminController@keySave')->name('admin.apikey.save');
 Route::get('/admin/apikey/delete/{id}', 'AdminController@keyDelete')->name('admin.apikey.delete');
